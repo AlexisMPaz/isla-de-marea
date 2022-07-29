@@ -254,7 +254,8 @@ header {
     border-radius: 15px;
     margin: 2rem auto;
     padding: 2rem;
-    background-color: black;
+    background: rgb(20,31,49);
+    background: linear-gradient(180deg, rgba(20,31,49,1) 30%, rgba(0,0,0,1) 100%);
 }
 
 .footer__info {
