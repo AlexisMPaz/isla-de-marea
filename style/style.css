@@ -43,7 +43,7 @@ header {
 
 .submenu {
     background-color: rgba(20, 31, 49, 1);
-    border: none;
+    border: 1px solid rgb(203, 208, 216) ;
 }
 
 .submenuDivider {
