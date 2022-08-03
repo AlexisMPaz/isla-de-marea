@@ -215,65 +215,36 @@ header {
     height: 100%;
 }
 
-/* Footer Contenido */
+/* Footer Estilo */
 
 .footer {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-    "info info"
-    "logo contacto";
-
-    width: 80%;
     border: 5px solid rgb(203, 208, 216);
     border-radius: 15px;
-    margin: 2rem auto;
-    padding: 2rem;
     background: rgb(20,31,49);
     background: linear-gradient(180deg, rgba(20,31,49,1) 30%, rgba(0,0,0,1) 100%);
-}
-
-.footer__info {
-    grid-area: info;
-    margin: auto;
-}
-
-.footer__logoContainer {
-    grid-area: logo;
     padding: 1rem;
-    margin: auto;
-
+    margin-bottom: 1rem;
 }
 
-.footer__contacto {
-    grid-area: contacto;
-    padding: 1rem;
-    margin: auto;
-
+.footer p, .footer ul {
+    margin: 0;
 }
 
+.footer ul {
+    list-style: none;
+} 
 
-.footer__logoContainer {
-    width: 5rem;
-
-}
-
-.footer__logo {
-    width: 100%;
-}
-
-.footer__contacto ul {
-    list-style-type: none;
-}
-
-.footer__contacto li a {
+.footer a {
     text-decoration: none;
     color: rgb(203, 208, 216);
-    font-size: .8rem;
+    margin-bottom: .2rem;
 }
 
-.footer__contacto li a:hover {
+.footer i {
+    margin-right: .3rem;
+}
+
+.footer a:hover {
     text-decoration: underline;
     color: rgb(211, 172, 43);
 }
@@ -282,14 +253,14 @@ header {
 
 @media only screen and (min-width: 768px) {
 
-    .grid, .footer {
+    .grid {
         width: 70%;
     }
 }
 
 @media only screen and (min-width: 1024px) {
   
-    .grid, .footer {
+    .grid {
         width: 70%;
     }
 
@@ -299,21 +270,11 @@ header {
         grid-template-areas:
         "main aside";
     }
-
-    .footer {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto;
-        grid-template-areas:
-        "info logo contacto";
-
-    }
 }
 
 @media only screen and (min-width: 1280px) {
    
-    .grid, .footer {
+    .grid {
         width: 60%;
     }
 }
-    
-
