@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/c393e088ca.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&family=Open+Sans:ital,wght@0,800;1,700&family=Source+Sans+Pro:wght@600;700&display=swap"
-        rel="stylesheet">
-    <title>Isla de Marea</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/c393e088ca.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="stylesheet" href="../style/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&family=Open+Sans:ital,wght@0,800;1,700&family=Source+Sans+Pro:wght@600;700&display=swap" rel="stylesheet">
+        <title>Isla de Marea</title>
+    </head>
 
 <body>
     <header>
-        <div class="header__navContainer">
-            <div class="header__logoContainer">
-                <a href="../index.html"><img class="header__logo" src="../img/img-logo.png" alt=""></a>
-            </div>
-
-            <div class="header__titleContainer">
-                <a class="header__title" href="../index.html">Isla de Marea</a>
-            </div>
-        </div>
-
-        <nav class="header__navList">
-            <ul>
-                <li><a href="./guidesindex.html">Guías</a></li>
-                <li><a href="./tools.html">Herramientas</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav class="navbar navbar-expand-sm justify-content-around nav">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/img-logo.png" alt="logo" width="224" >
+                </a>
+    
+                <button class="navbar-toggler hamburguerContainer" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon hamburguer"></span>
+                </button>
+    
+                  
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav menu">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="./guidesindex.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Guías
+                            </a>
+    
+                            <ul class="dropdown-menu submenu">
+                                <li><a class="dropdown-item" href="./guidesindex.html">Indice</a></li>
+                                <li><hr class="dropdown-divider submenuDivider"></li>
+                                <li><a class="dropdown-item" href="./guidelist/guide01.html">Personajes</a></li>
+                                <li><a class="dropdown-item" href="./guidelist/guide02.html">Economía</a></li>
+                            </ul>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="./tools.html">Herramientas</a>
+                        </li> 
+                    </ul>
+                </div>
+            </nav>          
+        </div>   
     </header>
 
     <div class="grid">
@@ -112,6 +128,8 @@
             </ul>
         </section>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 
 </html>
