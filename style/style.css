@@ -4,7 +4,7 @@
     padding: 0;
 }
 
-/* Body */
+/* Body Estilo */
 
 body {
     background-color: black;
@@ -20,11 +20,18 @@ body {
     color: rgb(203, 208, 216);
 }
 
-/* Header Contenido */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    color: azure;
+}
+
+/* Header Estilo */
 
 header {
     background-color: rgba(20, 31, 49, .8);
-    border-bottom: 5px solid rgb(203, 208, 216);
+    padding: 1rem;
+    margin-bottom: 2rem;
 }
 
 .hamburguerContainer {
@@ -35,15 +42,21 @@ header {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28203, 208, 216, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+.menu {
+    margin: 1rem;
+}
+
 .menu a {
     color: rgb(203, 208, 216);
     font-size: 1.4rem;
-    margin: 0 1rem;
+}
+
+.menu a:hover {
+    color: rgb(211, 172, 43);
 }
 
 .submenu {
     background-color: rgba(20, 31, 49, 1);
-    border: 1px solid rgb(203, 208, 216) ;
 }
 
 .submenuDivider {
@@ -54,155 +67,40 @@ header {
     font-size: 1.2rem;
 }
 
-.menu a:hover, .submenu a:hover {
+.submenu a:hover {
     color: rgb(211, 172, 43);
-    background-color: transparent;
+    background-color: rgb(51, 61, 81);
 }
 
-/* Main y Aside Grid */
+/* Main y Aside Estilo */
 
-.grid {
-
-    width: 80%;
-    border: 5px solid rgb(203, 208, 216);
+.fondo {
     border-radius: 15px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #141F31;
-
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-    "main"
-    "aside";
+    background: rgb(20,31,49);
+    background: linear-gradient(180deg, rgba(20,31,49,1) 77%, rgba(9,14,22,1) 100%);
+    padding: 0;
 }
 
 .main {
-    grid-area: main;
-    background-color: rgb(51, 61, 81);
+    background-color: #2b3344;
     border-radius: 15px;
-    padding: 1rem;
+    padding: 3rem;
 }
 
 .aside {
-    grid-area: aside;
-    background-color: #141F31;
-    border-radius: 15px;
-    padding: 1rem;
+    padding: 3rem 3rem 0 3rem;
 }
 
-/* Main y Aside Contenido */
-
-.main__titleContainer {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin: 1rem 0;
-}
-
-.main__title
-
-.main__section {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-
-.aside__titleContainer {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin: 1rem 0;
-}
-
-.main__sectionText {
-    padding: .5rem;
-}
-
-.main__sectionText h3 {
-    margin: 1rem 0;
-    font-size: 1.4rem;
-
-}
-
-.main__sectionText a, .main__sectionList a {
-    margin: 1rem 0;
-    font-size: 1.4rem;
-    color: brown;
-    text-decoration: none;
-}
-
-.main__sectionText a:hover, .main__sectionList a:hover {
-    text-decoration: underline;
-    color: rgb(211, 172, 43);
-}
-
-.main__sectionText p {
-    margin: 1rem 0;
-    font-weight: 600;
-}
-
-.main__sectionList ul{
-    list-style-type: none;
-}
-
-.main__sectionList li {
-    margin: 2rem;
-}
-
-.main__articleContainer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-}
-
-.main__article {
-    margin: 1rem;
-}
-
-.main__articleText h4 {
-    font-size: 1.2rem;
-}
-
-.main__articleText p {
-    font-size: 1rem;
-    max-width: 40rem;
-}
-
-
-
-/* Main y Aside Imagenes/Video */
-
-.main__gallery, .aside__gallery {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-
-}
-
-.main__gallery__imgContainer {
-    max-width: 80%;
-    height: auto;
-    margin: 1rem;
-}
-
-.aside__gallery__imgContainer {
-    width: 70%;
-    height: auto;
-    margin: 1rem;
-}
-
-.main__img, .aside__img {
-    width: 100%;
+.aside section div {
+    margin-bottom: 3rem;
 }
 
 .main__videoContainer {
     position: relative;
     overflow: hidden;
-    width: 90%;
+    width: 100%;
     padding-top: 56.25%;
-    margin: 1rem auto;
+    margin: 3rem auto;
 }
 
 .main__video {
@@ -215,15 +113,31 @@ header {
     height: 100%;
 }
 
+.mainSection {
+    margin: 2rem 0;
+}
+
+.main a {
+    color: brown;
+    font-size: 1.4rem;
+}
+
+.main a:hover {
+    color: rgb(211, 172, 43);
+}
+
+.main ul {
+    list-style: none;
+}
+
+.main ul li {
+    margin: 2rem 0;
+}
+
 /* Footer Estilo */
 
 .footer {
-    border: 5px solid rgb(203, 208, 216);
-    border-radius: 15px;
-    background: rgb(20,31,49);
-    background: linear-gradient(180deg, rgba(20,31,49,1) 30%, rgba(0,0,0,1) 100%);
-    padding: 1rem;
-    margin-bottom: 1rem;
+    padding: 5rem 2rem;
 }
 
 .footer p, .footer ul {
@@ -249,32 +163,13 @@ header {
     color: rgb(211, 172, 43);
 }
 
-/* Responsive Grid */
-
-@media only screen and (min-width: 768px) {
-
-    .grid {
-        width: 70%;
-    }
+article img {
+    margin: 1rem;
 }
 
-@media only screen and (min-width: 1024px) {
-  
-    .grid {
-        width: 70%;
-    }
 
-    .grid {
-        grid-template-columns: 3fr 1fr;
-        grid-template-rows: auto;
-        grid-template-areas:
-        "main aside";
-    }
-}
-
-@media only screen and (min-width: 1280px) {
-   
-    .grid {
-        width: 60%;
+@media only screen and (min-width: 992px) {
+    section p {
+        font-size: 1.3rem;
     }
 }
