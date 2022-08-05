@@ -84,15 +84,15 @@ header {
 .main {
     background-color: #2b3344;
     border-radius: 15px;
-    padding: 3rem;
+    padding: 2rem 2rem 0 2rem;
 }
 
 .aside {
-    padding: 3rem 3rem 0 3rem;
+    padding: 2rem 2rem 0 2rem;
 }
 
-.aside section div {
-    margin-bottom: 3rem;
+.aside section img {
+    margin: 2rem 0;
 }
 
 .main__videoContainer {
@@ -113,7 +113,7 @@ header {
     height: 100%;
 }
 
-.mainSection {
+.mainSection, .mainDiv {
     margin: 2rem 0;
 }
 
@@ -132,6 +132,24 @@ header {
 
 .main ul li {
     margin: 2rem 0;
+}
+
+.carrusel {
+    margin: 3rem 0;
+}
+
+.imgBorder {
+    border: 1px solid #7e8694;
+}
+
+.imgContainer {
+    width: 50%;
+    margin: 3rem auto;
+}
+
+.imgContainer-chico {
+    width: 30%;
+    margin: 2rem auto;
 }
 
 /* Footer Estilo */
@@ -167,6 +185,21 @@ article img {
     margin: 1rem;
 }
 
+
+@media only screen and (min-width:576px) {
+
+    .fondo {
+        margin-bottom: 2rem;
+    }
+
+    .main {
+        padding: 3rem 3rem 0 3rem;
+    }
+    
+    .aside {
+        padding: 3rem 3rem 0 3rem;
+    }
+}
 
 @media only screen and (min-width: 992px) {
     section p {
