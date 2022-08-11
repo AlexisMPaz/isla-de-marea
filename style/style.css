@@ -103,7 +103,7 @@ header {
 /* Main - Contenedor*/
 
 .main {
-    background-color: #2b3344;
+    background-color: rgba(43,51,68,1);
     border-radius: 15px;
     padding: 2rem 2rem 0 2rem;
 }
@@ -173,7 +173,7 @@ header {
 /* Main - Estilo y animacion article */
 
 .article-fondo {
-    background-color: rgba(20, 31, 49, .3);
+    background-color: rgba(20, 31, 49, .4);
     border-radius: 15px;
     padding: 1rem;
     --bs-gutter-y: 0;
