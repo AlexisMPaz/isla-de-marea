@@ -1,0 +1,27 @@
+{
+  "name": "page",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000i\u0000s\u0000l\u0000a\u0000-\u0000d\u0000e\u0000-\u0000m\u0000a\u0000r\u0000e\u0000a\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexisMPaz/isla-de-marea.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexisMPaz/isla-de-marea/issues"
+  },
+  "homepage": "https://github.com/AlexisMPaz/isla-de-marea#readme",
+  "dependencies": {
+    "sass": "^1.54.4"
+  },
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19"
+  }
+}
