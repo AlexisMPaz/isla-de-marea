@@ -1,0 +1,40 @@
+// Footer Nesting
+
+.footer {
+    padding: 5rem 2rem;
+
+    @media only screen and (min-width:576px) {
+        margin-bottom: 2rem;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    ul {
+        margin: 0;
+    }
+
+    a {
+        color: $color_text;
+        margin-bottom: .2;
+
+        &:hover {
+            text-decoration: underline;
+            color: $color_hover;
+        }
+
+        i {
+            margin-right: .3rem;
+        }
+        
+    }
+
+    .logoFooter {
+        transition: 300ms ease-in-out;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}

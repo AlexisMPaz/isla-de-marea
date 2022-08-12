@@ -1,0 +1,40 @@
+// Aside Nesting
+
+.aside {
+    padding: 2rem 2rem 0 2rem;
+
+    @media only screen and (min-width:576px) {
+        padding: 3rem 3rem 0 3rem;
+    }
+
+    .cortina {
+        position: relative;
+
+        img {
+            margin: 2rem 0;
+            transition: 500ms ease-in-out;
+            border: $border;
+        }
+        
+        .cortinaTexto {
+            position: absolute;
+            inset: 0;
+            font-size: 1.5rem;
+            color: rgb(203, 208, 216);
+            margin: 2rem 0;
+            padding: 0 1rem;
+            background-color: rgba(20, 31, 49, .7);
+            opacity: 0;
+            transition: 500ms ease-in-out;
+            border: $border;
+        }
+
+        &:hover img.blur {
+            filter: blur(1px);
+        }
+
+        &:hover .cortinaTexto.fade {
+            opacity: 1;
+        }
+    }  
+}

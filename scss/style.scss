@@ -1,10 +1,11 @@
 @charset 'utf-8';
 
 @import 'utilities/variables';
-@import 'utilities/mixins';
+@import 'utilities/lists';
 
 @import 'base/reset';
 
+@import 'layout/body';
 @import 'layout/header';
 @import 'layout/main';
 @import 'layout/aside';
@@ -12,4 +13,5 @@
 
 @import 'components/imgs';
 @import 'components/titles';
-@import 'components/bootstrap';
+@import 'components/iframe';
+@import 'components/carrusel';
