@@ -1,0 +1,59 @@
+// Header Nesting
+
+header {
+    background-color: $bg_transparent;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    
+    .nav {
+      --bs-navbar-hover-color: $color_hover;
+
+        .logoHeader {
+            transition: 300ms ease-in-out;
+    
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    
+        .hamburguerContainer {
+            border: 2px solid $color_text;
+    
+            .hamburguer {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28203, 208, 216, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            }
+        }
+    
+        .menu {
+            margin: 1rem;
+    
+            a {
+                color: $color_text;
+                font-size: nth($font-size, 4);
+                transition: 300ms ease-in-out;
+    
+                &:hover {		
+                    color: $color_hover;
+                }
+            }
+    
+            .submenu {
+                background-color: $bg_opaque;
+    
+                a {
+                    font-size: 1rem;
+                    transition: 300ms ease-in-out;
+    
+                    &:hover {
+                        color: $color_hover;
+                        background-color: $bg_secondary;
+                    }
+                }
+    
+                .submenuDivider {
+                    border-top: 1px solid $color_text;
+                }
+            }
+        }
+    } 
+}

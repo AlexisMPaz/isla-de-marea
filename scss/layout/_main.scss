@@ -1,0 +1,72 @@
+// Main nesting
+
+.main {
+    background-color: $bg_secondary;
+    border-radius: 15px;
+    padding: 2rem 2rem 0 2rem;
+  
+    @media only screen and (min-width:576px) {
+        padding: 3rem 3rem 0 3rem;
+    }
+
+    .mainSection {
+        margin: 2rem 0;
+
+        .mainDiv {
+            margin: 2rem 0;
+        }
+
+        a {
+            color: $color_link;
+            font-size: nth($font-size, 4);
+            transition: 300ms ease-in-out;
+
+            &:hover {
+                color: $color_hover;
+            }
+        } 
+
+        ul {
+            list-style: none;
+
+            li {
+                margin: 2rem 0;
+            }
+        }
+
+        p {
+            font-size: nth($font-size, 1);
+
+            @media only screen and (min-width: 992px) {
+                font-size: nth($font-size, 3);
+            }
+        }   
+
+        .article-fondo {
+            background-color: $bg_transparent;
+            border-radius: 15px;
+            padding: 1rem;
+            --bs-gutter-y: 0;
+
+            article {
+                padding: 1rem;
+                transform: scale(.9);
+                transition: 200ms ease-in-out;
+
+                &:hover {
+                    background-color: $bg_transparent;
+                    transform: scale(1);
+                }
+
+                img {
+                    margin: 1rem;
+                    border: $border;
+                }
+
+                p {
+                    font-size: nth($font-size, 1);
+                }
+            }
+        }
+    }
+}
