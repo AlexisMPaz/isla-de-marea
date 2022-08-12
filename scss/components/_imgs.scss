@@ -3,6 +3,12 @@
 .imgContainer {
     width: 50%;
     margin: 3rem auto;
+    border: $border;
+}
+
+.imgContainer-grande {
+    width: 100%;
+    border: $border;
 }
 
 .imgContainer-chico {
