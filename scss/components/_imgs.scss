@@ -1,17 +1,31 @@
 // Image Containers
 
 .imgContainer {
-    width: 50%;
-    margin: 3rem auto;
-    border: $border;
+    width: 95%;
+    margin: 3rem auto 1rem auto;
+
+    @media only screen and (min-width: 992px) {
+        width: 80%;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        width: 60%;
+    }
+
+    img {
+        width: 100%;
+    }
 }
 
 .imgContainer-grande {
-    width: 100%;
-    border: $border;
-}
+    width: 95%;
+    margin: 4rem auto;
 
-.imgContainer-chico {
-    width: 30%;
-    margin: 2rem auto;
+    @media only screen and (min-width: 992px) {
+        width: 85%;
+    }
+
+    img {
+        width: 100%;
+    }
 }

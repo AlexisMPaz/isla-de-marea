@@ -195,7 +195,7 @@ header .nav .menu .submenu .submenuDivider {
   color: rgb(211, 172, 43);
 }
 .footer a i {
-  margin-right: 0.3rem;
+  margin: auto 0.3rem;
 }
 .footer .logoFooter {
   transition: 300ms ease-in-out;
@@ -205,19 +205,34 @@ header .nav .menu .submenu .submenuDivider {
 }
 
 .imgContainer {
-  width: 50%;
-  margin: 3rem auto;
-  border: 1px solid #7e8694;
+  width: 95%;
+  margin: 3rem auto 1rem auto;
+}
+@media only screen and (min-width: 992px) {
+  .imgContainer {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .imgContainer {
+    width: 60%;
+  }
+}
+.imgContainer img {
+  width: 100%;
 }
 
 .imgContainer-grande {
-  width: 100%;
-  border: 1px solid #7e8694;
+  width: 95%;
+  margin: 4rem auto;
 }
-
-.imgContainer-chico {
-  width: 30%;
-  margin: 2rem auto;
+@media only screen and (min-width: 992px) {
+  .imgContainer-grande {
+    width: 85%;
+  }
+}
+.imgContainer-grande img {
+  width: 100%;
 }
 
 h1 {
