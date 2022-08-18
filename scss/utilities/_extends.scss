@@ -1,0 +1,9 @@
+// Extend animation logo
+
+%animation-logo {
+    transition: 300ms ease-in-out;
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+}

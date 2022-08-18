@@ -1,0 +1,7 @@
+// mixin para titulos
+
+@mixin title ($weight_title, $font_title, $color_title) {
+    font-family: $font_title;
+    font-weight: $weight_title;
+    color: $color_title;
+}

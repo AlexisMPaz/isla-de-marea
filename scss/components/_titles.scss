@@ -1,37 +1,25 @@
 // Titles
 
 h1 {
-    font-family: $font_title;
-    font-weight: 700;
-    color: $color_title;
+    @include title ($weight_title, $font_title, $color_title);
 }
 
 h2 {
-    font-family: $font_title;
-    font-weight: 700;
-    color: $color_title;
+    @include title ($weight_title, $font_title, $color_title)
 }
 
 h3 {
-    font-family: $font_title;
-    font-weight: 700;
-    color: $color_title;
+    @include title ($weight_title, $font_title, $color_title)
 }
 
 h4 {
-    font-family: $font_title;
-    font-weight: 700;
-    color: $color_title;
+    @include title ($weight_title, $font_title, $color_title)
 }
 
 h5 {
-    font-family: $font_title;
-    font-weight: 700;
-    color: $color_title;
+    @include title ($weight_title, $font_title, $color_title)
 }
 
 h6 {
-    font-family: $font_title;
-    font-weight: 700;
-    color: $color_title;
+    @include title ($weight_title, $font_title, $color_title)
 }

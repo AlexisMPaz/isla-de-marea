@@ -4,11 +4,11 @@
     width: 95%;
     margin: 3rem auto 1rem auto;
 
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: map-get($breakpoints, lg)) {
         width: 80%;
     }
 
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: map-get($breakpoints, xl)) {
         width: 60%;
     }
 
@@ -19,9 +19,9 @@
 
 .imgContainer-grande {
     width: 95%;
-    margin: 4rem auto;
+    margin: 4rem auto 1rem auto;
 
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: map-get($breakpoints, lg)) {
         width: 85%;
     }
 

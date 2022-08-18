@@ -8,17 +8,19 @@ body {
     background-size: cover;
     -o-background-size: cover;
 
-    // Body Text
+    // Body Texto
     font-family: $font_text;
-    font-weight: 700;
+    font-weight: 600;
     color: $color_text;
+
+    // Container Main + Aside + Footer
+    .fondo {
+        border-radius: 15px;
+        background: $bg_opaque;
+        background: linear-gradient(180deg, $bg_opaque 77%, $bg_body 100%);
+        padding: 0;
+    }
 }
 
-// Container Main + Aside + Footer
 
-.fondo {
-    border-radius: 15px;
-    background: $bg_opaque;
-    background: linear-gradient(180deg, $bg_opaque 77%, $bg_body 100%);
-    padding: 0;
-}
+

@@ -5,7 +5,7 @@
     border-radius: 15px;
     padding: 2rem 2rem 0 2rem;
   
-    @media only screen and (min-width:576px) {
+    @media only screen and (min-width:map-get($breakpoints, sm)) {
         padding: 3rem 3rem 0 3rem;
     }
 
@@ -37,7 +37,7 @@
         p {
             font-size: nth($font-size, 1);
 
-            @media only screen and (min-width: 992px) {
+            @media only screen and (min-width: map-get($breakpoints, lg)) {
                 font-size: nth($font-size, 3);
             }
         }   

@@ -3,7 +3,7 @@
 .footer {
     padding: 5rem 2rem;
 
-    @media only screen and (min-width:576px) {
+    @media only screen and (min-width:map-get($breakpoints, sm)) {
         margin-bottom: 2rem;
     }
 
@@ -31,10 +31,6 @@
     }
 
     .logoFooter {
-        transition: 300ms ease-in-out;
-
-        &:hover {
-            transform: scale(1.2);
-        }
+        @extend %animation-logo;
     }
 }

@@ -9,11 +9,7 @@ header {
       --bs-navbar-hover-color: $color_hover;
 
         .logoHeader {
-            transition: 300ms ease-in-out;
-    
-            &:hover {
-                transform: scale(1.1);
-            }
+            @extend %animation-logo;
         }
     
         .hamburguerContainer {

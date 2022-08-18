@@ -1,3 +1,10 @@
+.footer .logoFooter, header .nav .logoHeader {
+  transition: 300ms ease-in-out;
+}
+.footer .logoFooter:hover, header .nav .logoHeader:hover {
+  transform: scale(1.1);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -19,11 +26,10 @@ body {
   background-size: cover;
   -o-background-size: cover;
   font-family: "Source Sans Pro", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   color: rgb(203, 208, 216);
 }
-
-.fondo {
+body .fondo {
   border-radius: 15px;
   background: rgb(20, 31, 49);
   background: linear-gradient(180deg, rgb(20, 31, 49) 77%, black 100%);
@@ -37,12 +43,6 @@ header {
 }
 header .nav {
   --bs-navbar-hover-color: $color_hover;
-}
-header .nav .logoHeader {
-  transition: 300ms ease-in-out;
-}
-header .nav .logoHeader:hover {
-  transform: scale(1.1);
 }
 header .nav .hamburguerContainer {
   border: 2px solid rgb(203, 208, 216);
@@ -197,13 +197,6 @@ header .nav .menu .submenu .submenuDivider {
 .footer a i {
   margin: auto 0.3rem;
 }
-.footer .logoFooter {
-  transition: 300ms ease-in-out;
-}
-.footer .logoFooter:hover {
-  transform: scale(1.2);
-}
-
 .imgContainer {
   width: 95%;
   margin: 3rem auto 1rem auto;
@@ -213,7 +206,7 @@ header .nav .menu .submenu .submenuDivider {
     width: 80%;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1200px) {
   .imgContainer {
     width: 60%;
   }
@@ -224,7 +217,7 @@ header .nav .menu .submenu .submenuDivider {
 
 .imgContainer-grande {
   width: 95%;
-  margin: 4rem auto;
+  margin: 4rem auto 1rem auto;
 }
 @media only screen and (min-width: 992px) {
   .imgContainer-grande {
