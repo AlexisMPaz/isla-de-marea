@@ -93,7 +93,7 @@ header .nav .menu .submenu .submenuDivider {
   margin: 2rem 0;
 }
 .main .mainSection a {
-  color: brown;
+  color: #9a031e;
   font-size: 1.4rem;
   transition: 300ms ease-in-out;
 }
@@ -107,10 +107,18 @@ header .nav .menu .submenu .submenuDivider {
   margin: 2rem 0;
 }
 .main .mainSection p {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 @media only screen and (min-width: 992px) {
   .main .mainSection p {
+    font-size: 1.3rem;
+  }
+}
+.main .mainSection a {
+  font-size: 1.2rem;
+}
+@media only screen and (min-width: 992px) {
+  .main .mainSection a {
     font-size: 1.3rem;
   }
 }
@@ -249,19 +257,19 @@ h3 {
 h4 {
   font-family: "Merriweather", serif;
   font-weight: 700;
-  color: azure;
+  color: #8f2d56;
 }
 
 h5 {
   font-family: "Merriweather", serif;
   font-weight: 700;
-  color: azure;
+  color: #8f2d56;
 }
 
 h6 {
   font-family: "Merriweather", serif;
   font-weight: 700;
-  color: azure;
+  color: #8f2d56;
 }
 
 .main__videoContainer {

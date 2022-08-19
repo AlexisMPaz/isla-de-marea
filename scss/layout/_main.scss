@@ -35,12 +35,20 @@
         }
 
         p {
-            font-size: nth($font-size, 1);
+            font-size: nth($font-size, 2);
 
             @media only screen and (min-width: map-get($breakpoints, lg)) {
                 font-size: nth($font-size, 3);
             }
-        }   
+        }
+        
+        a {
+            font-size: nth($font-size, 2);
+
+            @media only screen and (min-width: map-get($breakpoints, lg)) {
+                font-size: nth($font-size, 3);
+            }
+        }
 
         .article-fondo {
             background-color: $bg_transparent;

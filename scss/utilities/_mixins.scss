@@ -5,3 +5,9 @@
     font-weight: $weight_title;
     color: $color_title;
 }
+
+@mixin title2 ($weight_title, $font_title, $color_title2) {
+    font-family: $font_title;
+    font-weight: $weight_title;
+    color: $color_title2;
+}

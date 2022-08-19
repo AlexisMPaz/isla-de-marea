@@ -13,13 +13,13 @@ h3 {
 }
 
 h4 {
-    @include title ($weight_title, $font_title, $color_title)
+    @include title2 ($weight_title, $font_title, $color_title2)
 }
 
 h5 {
-    @include title ($weight_title, $font_title, $color_title)
+    @include title2 ($weight_title, $font_title, $color_title2)
 }
 
 h6 {
-    @include title ($weight_title, $font_title, $color_title)
+    @include title2 ($weight_title, $font_title, $color_title2)
 }
