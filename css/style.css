@@ -93,7 +93,7 @@ header .nav .menu .submenu .submenuDivider {
   margin: 2rem 0;
 }
 .main .mainSection a {
-  color: #9a031e;
+  color: #fcf75e;
   font-size: 1.4rem;
   transition: 300ms ease-in-out;
 }
@@ -257,19 +257,19 @@ h3 {
 h4 {
   font-family: "Merriweather", serif;
   font-weight: 700;
-  color: #8f2d56;
+  color: #fffacd;
 }
 
 h5 {
   font-family: "Merriweather", serif;
   font-weight: 700;
-  color: #8f2d56;
+  color: #fffacd;
 }
 
 h6 {
   font-family: "Merriweather", serif;
   font-weight: 700;
-  color: #8f2d56;
+  color: #fffacd;
 }
 
 .main__videoContainer {
