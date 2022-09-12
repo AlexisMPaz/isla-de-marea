@@ -205,6 +205,40 @@ header .nav .menu .submenu .submenuDivider {
 .footer a i {
   margin: auto 0.3rem;
 }
+.shop {
+  padding: 1rem 1rem 0 1rem;
+}
+@media only screen and (min-width: 576px) {
+  .shop {
+    padding: 4rem 4rem 0 4rem;
+  }
+}
+.shop .shopItem {
+  margin: 1rem;
+  background-color: rgb(43, 51, 68);
+  border: 2px solid #7e8694;
+  position: relative;
+}
+.shop .shopItem img {
+  transition: 500ms ease-in-out;
+  padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+}
+.shop .shopItem .cortinaTexto {
+  position: absolute;
+  padding: 5rem 2.5rem;
+  inset: 0;
+  font-size: 1.5rem;
+  color: rgb(203, 208, 216);
+  opacity: 0;
+  transition: 500ms ease-in-out;
+}
+.shop .shopItem:hover .blur {
+  filter: blur(2px);
+}
+.shop .shopItem:hover .fade {
+  opacity: 1;
+}
+
 .imgContainer {
   width: 95%;
   margin: 3rem auto 1rem auto;

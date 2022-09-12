@@ -1,0 +1,48 @@
+//Shop Nesting
+
+.shop {
+
+    padding: 1rem 1rem 0 1rem;
+
+    @media only screen and (min-width:map-get($breakpoints, sm)) {
+        padding: 4rem 4rem 0 4rem;
+    }
+
+    .shopItem {
+        margin: 1rem;
+        background-color: $bg_secondary;
+        border: $border_secondary;
+        position: relative;
+    
+        img {
+            transition: 500ms ease-in-out;
+            padding: 1.5rem .5rem .5rem .5rem;
+            }
+            
+            .cortinaTexto {
+                position: absolute;
+                padding: 5rem 2.5rem;
+                inset: 0;
+                font-size: 1.5rem;
+                color: rgb(203, 208, 216);
+                opacity: 0;
+                transition: 500ms ease-in-out;
+            }
+    
+            &:hover {
+                .blur {
+                    filter: blur(2px);
+                }
+                
+            }
+    
+            &:hover{
+                .fade {
+                    opacity: 1;
+                }
+
+            }
+    }  
+
+    
+}
