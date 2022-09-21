@@ -144,6 +144,9 @@ header .nav .menu .submenu .submenuDivider {
 .main .mainSection .article-fondo article p {
   font-size: 1rem;
 }
+.main .calculatorSection {
+  margin: 3rem 0;
+}
 
 .aside {
   padding: 2rem 2rem 0 2rem;
