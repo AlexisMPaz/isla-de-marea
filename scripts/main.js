@@ -41,8 +41,8 @@ const arrayResult = [];
 
 // Document Elements:
 
+const formDPS = document.getElementById("formDPS");
 const calculateBtn = document.getElementById("calculateBtn");
-const resetBtn = document.getElementById("resetBtn");
 
 const inputMinPhys = document.getElementById("inputMinPhys");
 const inputMaxPhys = document.getElementById("inputMaxPhys");
@@ -58,7 +58,6 @@ const inputMaxCold = document.getElementById("inputMaxCold");
 
 const inputMinLight = document.getElementById("inputMinLight");
 const inputMaxLight = document.getElementById("inputMaxLight");
-
 
 const inputS = document.getElementById("inputS");
 
@@ -202,19 +201,23 @@ function display(label) {
     }
 }
 
-// Function: Reset
 
-function reset() {
-    arrayInputDPS.forEach((input) => {
-        if (input.value.length > 0) {
-            input.value = input.value.slice(0, 0);
-        }
-    })
-}
+// Validation Form
 
-// Program Buttoms
+inputS.addEventListener('input', function() {
+    this.setCustomValidity('');
+  });
 
-calculateBtn.addEventListener("click", () => {
+inputS.addEventListener("invalid", function() {
+    if (this.validity.valueMissing) {
+      this.setCustomValidity('Por favor ingrese velocidad de ataque!');
+    }
+});
+
+// Calculator Buttom
+
+formDPS.addEventListener("submit", (e) => {
+    e.preventDefault();
 
     arrayResult.length = 0;
 
@@ -237,32 +240,6 @@ calculateBtn.addEventListener("click", () => {
     display("Elemental");
     display("Total");
 });
-
-resetBtn.addEventListener("click", () => {
-    reset();
-
-    arrayResult.length = 0;
-
-    newDPS("Phys", inputMinPhys.value, inputMaxPhys.value);
-    newDPS("Chaos", inputMinChaos.value, inputMaxChaos.value);
-    newDPS("Fire", inputMinFire.value, inputMaxFire.value);
-    newDPS("Cold", inputMinCold.value, inputMaxCold.value);
-    newDPS("Light", inputMinLight.value, inputMaxLight.value);
-    newSpeed();
-
-    calculateDps();
-    calculateDpsElem();
-    calculateDpsTotal();
-
-    display("Phys");
-    display("Chaos");
-    display("Fire");
-    display("Cold");
-    display("Light");
-    display("Elemental");
-    display("Total");
-});
-
 
 
 
