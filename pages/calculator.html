@@ -21,12 +21,6 @@
 
         <!-- Aos-Animate On Scroll Library -->
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-        <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon_io/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon_io/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon_io/favicon-16x16.png">
-        <link rel="manifest" href="../img/favicon_io/site.webmanifest">
     
         <title>Isla de Marea | Guía para principiantes de Path of Exile</title>
     </head>
@@ -65,7 +59,7 @@
                             </li>
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="./shop.html">Tienda</a>
+                                <a class="nav-link" href="./calculator.html">Calculadora</a>
                             </li> 
                         </ul>
                     </div>
@@ -78,139 +72,171 @@
 
             <!-- Grid Main -->
             <main class="container-fluid shop main">
-                <h1 class="d-flex justify-content-center">Calculadora Daño por Segundo</h1>
+                <h1 class="d-flex justify-content-center">Calculadora de DPS para Path of Exile</h1>
 
-                <section class="container row row-cols-1 d-flex justify-content-around gx-5 calculator">
+                <p>
+                    Si bien la formula de obtener el daño por segundo de un arma no es complicado, como estas pueden tener varios tipos de DPS simultaneamente,
+                    nunca esta de más tener a mano una calculadora que te facilite la tarea.
+                </p>
+
+                <p>
+                    Para utilizarla solo debes llenar los campos de daño mínimo y máximo que tu arma posea e indresar los ataques por segundo.
+                </p>
+
+                <section id="formDPS" class="container row row-cols-1 d-flex justify-content-around calculator">
                     <div class="container col-10 col-xl-5 calculatorSection">
 
                         <div class="container row row-cols-4">
-                            <h3 class="col col-5">Físico</h3>
+                            <h4 class="col col-5">Físico</h4>
                             <div class="col col-3">
-                                <input type="text" class="form-control" id="exampleFormControlInput1"  placeholder="Min" step="0.01" maxlength="7" pattern="^\d+([,.]\d{1,2})?$">
+                                <input type="number" class="form-control" id="inputMinPhys"  placeholder="Min" step="1" min="0" max="10000">
                             </div>
 
-                            <h3 class="col col-1 d-flex justify-content-center">-</h3>
+                            <h4 class="col col-1 d-flex justify-content-center">-</h4>
 
                             <div class="col col-3">
-                                <input type="text" class="form-control" id="exampleFormControlInput1"  placeholder="Max" step="0.01" maxlength="7" pattern="^\d+([,.]\d{1,2})?$">
-                            </div>
-                        </div>
-
-                        <div class="container row row-cols-4">
-                            <h3 class="col col-5">Fuego</h3>
-                            <div class="col col-3">
-                                <input type="text" class="form-control" id="exampleFormControlInput1"  placeholder="Min" step="0.01" maxlength="7" pattern="^\d+([,.]\d{1,2})?$">
-                            </div>
-
-                            <h3 class="col col-1 d-flex justify-content-center">-</h3>
-
-                            <div class="col col-3">
-                                <input type="text" class="form-control" id="exampleFormControlInput1"  placeholder="Max" step="0.01" maxlength="7" pattern="^\d+([,.]\d{1,2})?$">
+                                <input type="number" class="form-control" id="inputMaxPhys"  placeholder="Max" step="1">
                             </div>
                         </div>
 
+                        <br>
+
                         <div class="container row row-cols-4">
-                            <h3 class="col col-5">Hielo</h3>
+                            <h4 class="col col-5">Caos</h4>
                             <div class="col col-3">
-                                <input type="text" class="form-control" id="exampleFormControlInput1"  placeholder="Min" step="0.01" maxlength="7" pattern="^\d+([,.]\d{1,2})?$">
+                                <input type="number" class="form-control" id="inputMinChaos"  placeholder="Min" step="1" pattern="^\d+([,.]\d{1,2})?$">
                             </div>
 
-                            <h3 class="col col-1 d-flex justify-content-center">-</h3>
+                            <h4 class="col col-1 d-flex justify-content-center">-</h4>
 
                             <div class="col col-3">
-                                <input type="text" class="form-control" id="exampleFormControlInput1"  placeholder="Max" step="0.01" maxlength="7" pattern="^\d+([,.]\d{1,2})?$">
+                                <input type="number" class="form-control" id="inputMaxChaos"  placeholder="Max" step="1" pattern="^\d+([,.]\d{1,2})?$">
                             </div>
                         </div>
 
+                        <br>
+
                         <div class="container row row-cols-4">
-                            <h3 class="col col-5">Rayo</h3>
+                            <h4 class="col col-5">Fuego</h4>
                             <div class="col col-3">
-                                <input type="text" class="form-control" id="exampleFormControlInput1"  placeholder="Min" step="0.01" maxlength="7" pattern="^\d+([,.]\d{1,2})?$">
+                                <input type="number" class="form-control" id="inputMinFire"  placeholder="Min" step="1" pattern="^\d+([,.]\d{1,2})?$">
                             </div>
 
-                            <h3 class="col col-1 d-flex justify-content-center">-</h3>
+                            <h4 class="col col-1 d-flex justify-content-center">-</h4>
 
                             <div class="col col-3">
-                                <input type="text" class="form-control" id="exampleFormControlInput1"  placeholder="Max" step="0.01" maxlength="7" pattern="^\d+([,.]\d{1,2})?$">
+                                <input type="number" class="form-control" id="inputMaxFire"  placeholder="Max" step="1" pattern="^\d+([,.]\d{1,2})?$">
                             </div>
                         </div>
 
+                        <br>
+
                         <div class="container row row-cols-4">
-                            <h3 class="col col-5">Caos</h3>
+                            <h4 class="col col-5">Hielo</h4>
                             <div class="col col-3">
-                                <input type="text" class="form-control" id="exampleFormControlInput1"  placeholder="Min" step="0.01" maxlength="7" pattern="^\d+([,.]\d{1,2})?$">
+                                <input type="number" class="form-control" id="inputMinCold"  placeholder="Min" step="1" pattern="^\d+([,.]\d{1,2})?$">
                             </div>
 
-                            <h3 class="col col-1 d-flex justify-content-center">-</h3>
+                            <h4 class="col col-1 d-flex justify-content-center">-</h4>
 
                             <div class="col col-3">
-                                <input type="text" class="form-control" id="exampleFormControlInput1"  placeholder="Max" step="0.01" maxlength="7" pattern="^\d+([,.]\d{1,2})?$">
+                                <input type="number" class="form-control" id="inputMaxCold"  placeholder="Max" step="1" pattern="^\d+([,.]\d{1,2})?$">
                             </div>
                         </div>
 
+                        <br>
+
                         <div class="container row row-cols-4">
-                            <h3 class="col col-5">Velocidad</h3>
+                            <h4 class="col col-5">Rayo</h4>
                             <div class="col col-3">
-                                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="0.00">
+                                <input type="number" class="form-control" id="inputMinLight"  placeholder="Min" step="1" pattern="^\d+([,.]\d{1,2})?$">
+                            </div>
+
+                            <h4 class="col col-1 d-flex justify-content-center">-</h4>
+
+                            <div class="col col-3">
+                                <input type="number" class="form-control" id="inputMaxLight"  placeholder="Max" step="1" pattern="^\d+([,.]\d{1,2})?$">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="container row row-cols-4">
+                            <h4 class="col col-5">Speed</h4>
+                            <div class="col col-3">
+                                <input type="number" class="form-control" id="inputS" placeholder="0.00" step="0.1" pattern="^\d+([.]\d{1,2})?$" required>
                             </div>
                         </div>
                     </div>
     
                     <div class="col-10 col-lg-5 calculatorSection">
                         <div class="container row row-cols-2">
-                            <h3 class="col col-6">Físico: </h3>
+                            <h4 class="col col-6">Físico: </h4>
                             <div class="col col-4">
-                                <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="0.00"></textarea>
+                                <textarea readonly class="form-control" id="areaPhys" rows="1" placeholder="0.00"></textarea>
                             </div>
                         </div>
 
+                        <br>
+
                         <div class="container row row-cols-2">
-                            <h3 class="col col-6">Caos: </h3>
+                            <h4 class="col col-6">Caos: </h4>
                             <div class="col col-4">
-                                <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="0.00"></textarea>
+                                <textarea readonly class="form-control" id="areaChaos" rows="1" placeholder="0.00"></textarea>
                             </div>
                         </div>
 
+                        <br>
+
                         <div class="container row row-cols-2">
-                            <h3 class="col col-6">Fuego: </h3>
+                            <h4 class="col col-6">Fuego: </h4>
                             <div class="col col-4">
-                                <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="0.00"></textarea>
+                                <textarea readonly class="form-control" id="areaFire" rows="1" placeholder="0.00"></textarea>
                             </div>
                         </div>
 
+                        <br>
+
                         <div class="container row row-cols-2">
-                            <h3 class="col col-6">Hielo: </h3>
+                            <h4 class="col col-6">Hielo: </h4>
                             <div class="col col-4">
-                                <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="0.00"></textarea>
+                                <textarea readonly class="form-control" id="areaCold" rows="1" placeholder="0.00"></textarea>
                             </div>
                         </div>
 
+                        <br>
+
                         <div class="container row row-cols-2">
-                            <h3 class="col col-6">Rayo: </h3>
+                            <h4 class="col col-6">Rayo: </h4>
                             <div class="col col-4">
-                                <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="0.00"></textarea>
+                                <textarea readonly class="form-control" id="areaLight" rows="1" placeholder="0.00"></textarea>
                             </div>
                         </div>
 
+                        <br>
+
                         <div class="container row row-cols-2">
-                            <h3 class="col col-6">Elemental:</h3>
+                            <h4 class="col col-6">Elemental:</h4>
                             <div class="col col-4">
-                                <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="0.00"></textarea>
+                                <textarea readonly class="form-control" id="areaElemental" rows="1" placeholder="0.00"></textarea>
                             </div>
                         </div>
 
+                        <br>
+
                         <div class="container row row-cols-2">
-                            <h3 class="col col-6">Total: </h3>
+                            <h4 class="col col-6">Total: </h4>
                             <div class="col col-4">
-                                <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="0.00"></textarea>
+                                <textarea readonly class="form-control" id="areaTotal" rows="1" placeholder="0.00"></textarea>
                             </div>
                         </div>
 
 
                     </div>
 
-                    <div class="calculatorSection d-flex justify-content-center">
-                        <button type="button" class="btn  btn-warning">Calcular DPS</button>
+                    <div class="calculatorSection d-flex justify-content-around">
+                        <button type="button" class="btn  btn-warning" id="calculateBtn">Calcular DPS</button>
+                        <button type="reset" class="btn  btn-warning" id="resetBtn">Reset</button>
                     </div>
                 </section>
               
@@ -258,6 +284,7 @@
             AOS.init();
         </script>
 
-        <script src="../main.js"></script>
+        <!-- Javascript -->
+        <script src="../scripts/main.js"></script>
     </body>
 </html>
