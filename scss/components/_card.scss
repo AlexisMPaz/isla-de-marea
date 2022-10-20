@@ -2,4 +2,21 @@
 
 .weaponCard {
     background-color: $bg_opaque;
+    border: $border_secondary;
+
+    .S {
+        color: gold;
+    }
+
+    .A {
+        color: red;
+    }
+
+    .B {
+        color: greenyellow;
+    }
+
+    .C {
+        color: grey;
+    }
 }

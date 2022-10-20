@@ -304,6 +304,19 @@ h6 {
 
 .weaponCard {
   background-color: rgb(20, 31, 49);
+  border: 2px solid #7e8694;
+}
+.weaponCard .S {
+  color: gold;
+}
+.weaponCard .A {
+  color: red;
+}
+.weaponCard .B {
+  color: greenyellow;
+}
+.weaponCard .C {
+  color: grey;
 }
 
 /*# sourceMappingURL=style.css.map */

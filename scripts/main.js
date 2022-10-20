@@ -39,10 +39,7 @@ const arrayDPS = [physDPS, chaosDPS, fireDPS, coldDPS, lightDPS];
 
 const arrayResult = [];
 
-// Document Elements:
-
-const formDPS = document.getElementById("formDPS");
-const calculateBtn = document.getElementById("calculateBtn");
+// Form Inputs:
 
 const inputMinPhys = document.getElementById("inputMinPhys");
 const inputMaxPhys = document.getElementById("inputMaxPhys");
@@ -60,6 +57,10 @@ const inputMinLight = document.getElementById("inputMinLight");
 const inputMaxLight = document.getElementById("inputMaxLight");
 
 const inputS = document.getElementById("inputS");
+
+const selectType = document.getElementById("selectType");
+
+// Form Results:
 
 const areaPhys = document.getElementById("areaPhys");
 const areaChaos = document.getElementById("areaChaos");
@@ -204,6 +205,8 @@ function display(label) {
 
 // Validation Form
 
+const formDPS = document.getElementById("formDPS");
+
 inputS.addEventListener('input', function() {
     this.setCustomValidity('');
   });
@@ -214,7 +217,7 @@ inputS.addEventListener("invalid", function() {
     }
 });
 
-// Calculator Buttom
+// Calculate DPS Buttom
 
 formDPS.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -239,7 +242,149 @@ formDPS.addEventListener("submit", (e) => {
     display("Light");
     display("Elemental");
     display("Total");
+
+    createWeapon();
+    console.log(arrayWeapons);
+    showCards();
 });
+
+
+//////////////////////////////////////////////////////////////////////////
+
+// Weapon Cards
+
+class WeaponCard {
+    constructor(phys, elemental, weaponType) {
+        this.phys = phys;
+        this.elemental = elemental;
+        this.weaponType = weaponType;
+        this.tier = setTier(this.phys, this.elemental, this.weaponType);
+        this.id = setId(this.weaponType);
+    }
+}
+
+let arrayWeapons = [];
+
+
+// Function: Set Card Tier
+
+function setTier(phys, elemental, weaponType) {
+    if (weaponType === "Espada (1 mano)" || weaponType === "Hacha (1 mano)" || weaponType === "Maza (1 mano)" || weaponType === "Arco") {
+        if (elemental >= 600 || phys >= 600) {
+            return "S"
+    
+        } else if (elemental >= 500 || phys >= 500) {
+            return "A"
+    
+        } else if (elemental >= 400 || phys >= 400) {
+            return "B"
+
+        } else {
+            return "C"
+        }
+
+    } else {
+        if (elemental >= 800 || phys >= 800) {
+            return "S"
+    
+        } else if (elemental >= 700 || phys >= 700) {
+            return "A"
+    
+        } else if (elemental >= 600 || phys >= 600) {
+            return "B"
+
+        } else {
+            return "C"
+        }
+    } 
+}
+
+// Function: Set Card ID
+
+function setId(weaponType) {
+    if (weaponType === "Espada (1 mano)") {
+        return "oneHandSword"
+
+    } else if (weaponType === "Hacha (1 mano)") {
+        return "oneHandAxe"
+
+    } else if (weaponType === "Maza (1 mano)") {
+        return "oneHandMace"
+
+    } else if (weaponType === "Espada (2 manos)") {
+        return "twoHandSword"
+
+    } else if (weaponType === "Hacha (2 manos)") {
+        return "twoHandAxe"
+
+    } else if (weaponType === "Maza (2 manos)") {
+        return "twoHandMace"
+
+    } else if (weaponType === "Arco") {
+        return "bow"
+
+    } else {
+        return "Error"
+    }
+}
+
+// Function: Create new Weapon
+
+function createWeapon() {
+    const newWeapon = new WeaponCard(areaPhys.value, areaElemental.value, selectType.value);
+    arrayWeapons.push(newWeapon);
+}
+
+// Function: Show Weapons
+
+const cardContainer = document.getElementById("cardContainer");
+
+function showCards() {
+    cardContainer.innerHTML="";
+    arrayWeapons.forEach((weapon) => {
+        const card = document.createElement("div");
+        card.classList.add("card", "weaponCard", "mb-3", "col-12", "col-lg-6");
+        card.innerHTML = `
+            <div class="row g-0">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <img src="../img/weapons/${weapon.id}.png" class="img-fluid rounded-start" alt="${weapon.weaponType}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title ">${weapon.weaponType}</h5>
+                        <h5 class="card-title ${weapon.tier}">Tier ${weapon.tier}</h5>
+                        <p class="card-text">Dps Fisico: ${weapon.phys}</p>
+                        <p class="card-text">DPS Elemental: ${weapon.elemental}</p>
+                    </div>
+                </div>
+            </div>
+        `
+        cardContainer.appendChild(card);
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
