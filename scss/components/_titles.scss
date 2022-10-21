@@ -5,21 +5,22 @@ h1 {
 }
 
 h2 {
-    @include title ($weight_title, $font_title, $color_title)
+    @include title ($weight_title, $font_title, $color_title);
 }
 
 h3 {
-    @include title ($weight_title, $font_title, $color_title)
+    @include title ($weight_title, $font_title, $color_title);
 }
 
 h4 {
-    @include title2 ($weight_title, $font_title, $color_title2)
+    @include title2 ($weight_title, $font_title, $color_title2);
+    margin-bottom: 0;
 }
 
 h5 {
-    @include title2 ($weight_title, $font_title, $color_title2)
+    @include title2 ($weight_title, $font_title, $color_title2);
 }
 
 h6 {
-    @include title2 ($weight_title, $font_title, $color_title2)
+    @include title2 ($weight_title, $font_title, $color_title2);
 }
