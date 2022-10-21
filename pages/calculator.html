@@ -87,14 +87,14 @@
 
             <section class="mainSection text-center">
                 <p>
-                    La fórmula para obtener el DPS de un arma es muy sencilla pero puede resultar tediosa por la
-                    cantidad de diferentes tipos de daño que puede tener un arma simultaneamente,
+                    La fórmula para obtener el DPS de un arma es muy sencilla pero puede resultar tediosa por los
+                    diferentes tipos de daño que puede simultaneamente,
                     por eso nunca esta de más tener a mano una calculadora que te facilite la tarea.
                 </p>
 
                 <p>
                     Para utilizarla solo debes llenar los campos de daño mínimo y máximo que tu arma posea e ingresar la
-                    velocidad de ataque.
+                    velocidad de ataque. La clase sirve para evaluar la utilidad del arma.
                 </p>
             </section>
 
@@ -105,14 +105,14 @@
                         <h4 class="col col-12 col-sm-3 text-center">Físico</h4>
                         <div class="col col-5 col-sm-4">
                             <input type="number" class="form-control" id="inputMinPhys" placeholder="Min" step="1"
-                                min="0" max="1000">
+                                min="0" max="9999">
                         </div>
 
                         <h4 class="col col-2 col-sm-1 d-flex justify-content-center">-</h4>
 
                         <div class="col col-5 col-sm-4">
                             <input type="number" class="form-control" id="inputMaxPhys" placeholder="Max" step="1"
-                                min="0" max="1000">
+                                min="0" max="9999">
                         </div>
                     </div>
 
@@ -122,14 +122,14 @@
                         <h4 class="col col-12 col-sm-3 text-center">Caos</h4>
                         <div class="col col-5 col-sm-4">
                             <input type="number" class="form-control" id="inputMinChaos" placeholder="Min" step="1"
-                                min="0" max="1000">
+                                min="0" max="9999">
                         </div>
 
                         <h4 class="col col-2 col-sm-1 d-flex justify-content-center">-</h4>
 
                         <div class="col col-5 col-sm-4 text-center">
                             <input type="number" class="form-control" id="inputMaxChaos" placeholder="Max" step="1"
-                                min="0" max="1000">
+                                min="0" max="9999">
                         </div>
                     </div>
 
@@ -139,14 +139,14 @@
                         <h4 class="col col-12 col-sm-3 text-center">Fuego</h4>
                         <div class="col col-5 col-sm-4">
                             <input type="number" class="form-control" id="inputMinFire" placeholder="Min" step="1"
-                                min="0" max="1000">
+                                min="0" max="9999">
                         </div>
 
                         <h4 class="col col-2 col-sm-1 d-flex justify-content-center">-</h4>
 
                         <div class="col col-5 col-sm-4">
                             <input type="number" class="form-control" id="inputMaxFire" placeholder="Max" step="1"
-                                min="0" max="1000">
+                                min="0" max="9999">
                         </div>
                     </div>
 
@@ -156,14 +156,14 @@
                         <h4 class="col col-12 col-sm-3 text-center">Hielo</h4>
                         <div class="col col-5 col-sm-4">
                             <input type="number" class="form-control" id="inputMinCold" placeholder="Min" step="1"
-                                min="0" max="1000">
+                                min="0" max="9999">
                         </div>
 
                         <h4 class="col col-2 col-sm-1 d-flex justify-content-center">-</h4>
 
                         <div class="col col-5 col-sm-4">
                             <input type="number" class="form-control" id="inputMaxCold" placeholder="Max" step="1"
-                                min="0" max="1000">
+                                min="0" max="9999">
                         </div>
                     </div>
 
@@ -173,14 +173,14 @@
                         <h4 class="col col-12 col-sm-3 text-center">Rayo</h4>
                         <div class="col col-5 col-sm-4">
                             <input type="number" class="form-control" id="inputMinLight" placeholder="Min" step="1"
-                                min="0" max="1000">
+                                min="0" max="9999">
                         </div>
 
                         <h4 class="col col-2 col-sm-1 d-flex justify-content-center">-</h4>
 
                         <div class="col col-5 col-sm-4">
                             <input type="number" class="form-control" id="inputMaxLight" placeholder="Max" step="1"
-                                min="0" max="1000">
+                                min="0" max="9999">
                         </div>
                     </div>
 
@@ -305,8 +305,8 @@
                 <h2 class="text-center">Evaluación de armas:</h2>
 
                 <p>
-                    Dependiendo del tipo y su DPS físico y elemental total, las armas, se pueden agrupar por tier que
-                    determina su utilidad y valor:
+                    Dependiendo de la clase y el DPS físico y elemental total, las armas se pueden agrupar por tier que
+                    determina su utilidad y por lo tanto su valor:
                 </p>
 
                 <div class="reference">
@@ -322,8 +322,7 @@
 
                     <p>
                         No te pueden llevar muy lejos en el juego pero al menos sirven para la historia principal. Solo
-                        deberías comprarla
-                        si estas muy corto de moneda o necesitas ahorrar para un objeto mandatorio.
+                        deberías comprarla si estas muy corto de moneda o necesitas ahorrar para un objeto mandatorio.
                     </p>
 
                 </div>
@@ -342,8 +341,7 @@
 
                     <p>
                         Aceptable para mapas del atlas de tier blanco pero menos efectiva en tiers más altos. Es
-                        recomendable para ser tu primer arma
-                        para empezar a explorar el atlas de mundos.
+                        recomendable para ser tu primer arma para empezar a explorar el atlas de mundos.
                     </p>
                 </div>
 
@@ -376,8 +374,7 @@
 
                     <p>
                         Las mejores armas que uno puede aspirar a conseguir. Hay pocas en el mercado porque generalmente
-                        uno prefiere crearla
-                        con sus propios materiales pero si te sobran riquezas o no sabes como crearla es muy
+                        uno prefiere crearla con sus propios materiales pero si te sobran riquezas o no sabes como crearla es muy
                         recomendable comprarla.
                     </p>
                 </div>
