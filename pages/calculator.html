@@ -98,9 +98,9 @@
                 </p>
             </section>
 
-            <form id="formDPS" class="container row row-cols-1 d-flex justify-content-around calculator">
-                <div class="container col-md-12 col-xl-6 calculatorSection">
-
+            <section class="container row row-cols-1 d-flex justify-content-around calculator">
+                
+                <form class="container col-md-12 col-xl-6 calculatorSection" id="formDPS">
                     <div class="container row row-cols-4">
                         <h4 class="col col-12 col-sm-5 text-center">Físico</h4>
                         <div class="col col-5 col-sm-3">
@@ -214,10 +214,10 @@
                     </div>
 
                     <div class="calculatorSection d-flex justify-content-around">
-                        <button type="submit" class="btn  btn-warning" id="calculateBtn">Calcular DPS</button>
+                        <button type="submit" class="btn  btn-primary" id="calculateBtn">Calcular DPS</button>
                         <button type="reset" class="btn  btn-warning" id="resetBtn">Reset</button>
                     </div>
-                </div>
+                </form>
 
                 <div class="col-12 col-lg-6 calculatorSection">
                     <div class="container row row-cols-2">
@@ -287,19 +287,103 @@
                                 placeholder="0.00"></textarea>
                         </div>
                     </div>
+
+                    <div class="calculatorSection d-flex justify-content-around">
+                        <button class="btn  btn-success" id="showCardsBtn">Mostrar Armas</button>
+
+                        <button class="btn  btn-danger" id="eraseCardsBtn">Borrar Armas</button>
+                    </div>
                 </div>
-            </form>
-
-            <section class="mainSection">         
-                <h2 class="text-center">Evaluación de armas:</h2>
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis reprehenderit facere at commodi rem atque natus aspernatur obcaecati eos ex.
-                </p>
 
             </section>
 
+
+
             <div class="container row row-cols-2" id="cardContainer"></div>
+
+            <section class="mainSection">
+                <h2 class="text-center">Evaluación de armas:</h2>
+
+                <p>
+                    Dependiendo del tipo y su DPS físico y elemental total, las armas, se pueden agrupar por tier que
+                    determina su utilidad y valor:
+                </p>
+
+                <div class="reference">
+                    <h3 class="tierC">Tier C:</h3>
+
+                    <div class="d-flex align-items-center">
+                        <h5>
+                            Precio estimado: Menor a 20 Chaos Orb
+                            <img src="../img/chaos.png" alt="Chaos Orb Path of Exile">
+                            <h5>
+
+                    </div>
+
+                    <p>
+                        No te pueden llevar muy lejos en el juego pero al menos sirven para la historia principal. Solo
+                        deberías comprarla
+                        si estas muy corto de moneda o necesitas ahorrar para un objeto mandatorio.
+                    </p>
+
+                </div>
+
+                <div class="reference">
+                    <h3 class="tierB">Tier B:</h3>
+
+                    <div class="d-flex align-items-center">
+                        <h5>
+                            Precio estimado: Entre 20 Chaos Orb
+                            <img src="../img/chaos.png" alt="Chaos Orb Path of Exile">
+                            y 2 Divine Orb
+                            <img src="../img/divine.png" alt="Divine Orb Path of Exile">
+                            <h5>
+                    </div>
+
+                    <p>
+                        Aceptable para mapas del atlas de tier blanco pero menos efectiva en tiers más altos. Es
+                        recomendable para ser tu primer arma
+                        para empezar a explorar el atlas de mundos.
+                    </p>
+                </div>
+
+                <div class="reference">
+                    <h3 class="tierA">Tier A:</h3>
+
+                    <div class="d-flex align-items-center">
+                        <h5>
+                            Precio estimado: Mayor a 2 Divine Orb
+                            <img src="../img/divine.png" alt="Divine Orb Path of Exile">
+                            <h5>
+                    </div>
+
+                    <p>
+                        En este tier entran todas las armas que pueden considerarse equipo final para el jugador
+                        promedio.
+                        Puede usarse para todo el contenido aunque para las peleas mas difíciles puede que falte daño.
+                    </p>
+                </div>
+
+                <div class="reference">
+                    <h3 class="tierS">Tier S:</h3>
+
+                    <div class="d-flex align-items-center">
+                        <h5>
+                            Precio estimado: Mayor a 30 Divine Orb <img src="../img/divine.png"
+                                alt="Divine Orb Path of Exile">
+                            <h5>
+                    </div>
+
+                    <p>
+                        Las mejores armas que uno puede aspirar a conseguir. Hay pocas en el mercado porque generalmente
+                        uno prefiere crearla
+                        con sus propios materiales pero si te sobran riquezas o no sabes como crearla es muy
+                        recomendable comprarla.
+                    </p>
+                </div>
+            </section>
+
+            <br><br>
         </main>
 
         <!-- Grid Footer -->
@@ -354,5 +438,4 @@
     <!-- Javascript -->
     <script src="../scripts/main.js"></script>
 </body>
-
 </html>

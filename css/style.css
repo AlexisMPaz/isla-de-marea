@@ -319,4 +319,23 @@ h6 {
   color: grey;
 }
 
+.reference {
+  margin: 2rem 0;
+}
+.reference p {
+  margin: 0;
+}
+.reference .tierC {
+  color: grey;
+}
+.reference .tierB {
+  color: greenyellow;
+}
+.reference .tierA {
+  color: red;
+}
+.reference .tierS {
+  color: gold;
+}
+
 /*# sourceMappingURL=style.css.map */

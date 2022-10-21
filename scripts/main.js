@@ -244,8 +244,6 @@ formDPS.addEventListener("submit", (e) => {
     display("Total");
 
     createWeapon();
-    console.log(arrayWeapons);
-    showCards();
 });
 
 
@@ -259,12 +257,14 @@ class WeaponCard {
         this.elemental = elemental;
         this.weaponType = weaponType;
         this.tier = setTier(this.phys, this.elemental, this.weaponType);
-        this.id = setId(this.weaponType);
+        this.img = setImg(this.weaponType);
+        this.id = arrayWeapons.length;
     }
 }
 
 let arrayWeapons = [];
 
+arrayWeapons = localStorage.getItem("weapons") ? JSON.parse(localStorage.getItem("weapons")) : [];
 
 // Function: Set Card Tier
 
@@ -301,7 +301,7 @@ function setTier(phys, elemental, weaponType) {
 
 // Function: Set Card ID
 
-function setId(weaponType) {
+function setImg(weaponType) {
     if (weaponType === "Espada (1 mano)") {
         return "oneHandSword"
 
@@ -333,41 +333,72 @@ function setId(weaponType) {
 function createWeapon() {
     const newWeapon = new WeaponCard(areaPhys.value, areaElemental.value, selectType.value);
     arrayWeapons.push(newWeapon);
+    localStorage.setItem("weapons", JSON.stringify(arrayWeapons));
 }
 
 // Function: Show Weapons
 
 const cardContainer = document.getElementById("cardContainer");
+const showCardsBtn = document.getElementById("showCardsBtn");
+
+showCardsBtn.addEventListener("click", () => {
+    showCards();
+});
 
 function showCards() {
-    cardContainer.innerHTML="";
+    cardContainer.innerHTML = " ";
     arrayWeapons.forEach((weapon) => {
         const card = document.createElement("div");
         card.classList.add("card", "weaponCard", "mb-3", "col-12", "col-lg-6");
         card.innerHTML = `
             <div class="row g-0">
                 <div class="col-md-4 d-flex justify-content-center">
-                    <img src="../img/weapons/${weapon.id}.png" class="img-fluid rounded-start" alt="${weapon.weaponType}">
+                    <img src="../img/weapons/${weapon.img}.png" class="img-fluid rounded-start" alt="${weapon.weaponType}">
                 </div>
                 <div class="col-md-8">
-                    <div class="card-body">
+                <div class="card-body row">
+                    <div class="col-8">
                         <h5 class="card-title ">${weapon.weaponType}</h5>
                         <h5 class="card-title ${weapon.tier}">Tier ${weapon.tier}</h5>
                         <p class="card-text">Dps Fisico: ${weapon.phys}</p>
                         <p class="card-text">DPS Elemental: ${weapon.elemental}</p>
                     </div>
+                    <div class="col-4 d-flex align-items-end">
+                        <button class="btn btn-warning" id="btn${weapon.id}"> Borrar </button>
+                    </div>
                 </div>
+            </div>
             </div>
         `
         cardContainer.appendChild(card);
+
+        const btn = document.getElementById(`btn${weapon.id}`);
+        btn.addEventListener("click", () =>{
+            eraseWeapon(weapon.id);
+        })
     })
 }
 
+// Function Erase weapon
 
+function eraseWeapon(id) {
+    const weapon = arrayWeapons.find((weapon) => weapon.id === id);
+    const weaponId = arrayWeapons.indexOf(weapon);
+    arrayWeapons.splice(weaponId, 1);
+    showCards();
 
+    localStorage.setItem("weapons", JSON.stringify(arrayWeapons));
+}
 
+// Function Erase all weapons
 
+const eraseCardsBtn = document.getElementById("eraseCardsBtn");
 
+eraseCardsBtn.addEventListener("click", () => {
+    arrayWeapons = [];
+    showCards();
+    localStorage.clear();
+})
 
 
 
