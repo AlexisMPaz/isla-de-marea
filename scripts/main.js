@@ -37,7 +37,7 @@ const speedDPS = new DpsSpeed(0, "Speed");
 
 const arrayDPS = [physDPS, chaosDPS, fireDPS, coldDPS, lightDPS];
 
-const arrayResult = [];
+
 
 // Form Inputs:
 
@@ -82,29 +82,45 @@ arrayInputDPS.forEach((input) => {
     }
 });
 
+// Form validity:
+
+const formDPS = document.getElementById("formDPS");
+
+inputS.addEventListener('input', function () {
+    this.setCustomValidity('');
+});
+
+inputS.addEventListener("invalid", function () {
+    if (this.validity.valueMissing) {
+        this.setCustomValidity('Por favor ingrese velocidad de ataque!');
+    }
+});
+
 // Function: Modify dps values with new entry on input
 
-function newDPS(label, inputMin, inputMax) {
-    if (label === "Phys" || "Chaos" || "Fire" || "Cold" || "Light") {
-        const index = arrayDPS.findIndex(object => {
-            return object.type === label;
-        })
+function newPhysicalDPS(inputMin, inputMax) {
+    inputMin > 0 ? physDPS.min = parseFloat(inputMin) : physDPS.min = 0;
+    inputMax > 0 ? physDPS.max = parseFloat(inputMax) : physDPS.max = 0;
+}
 
-        if (index != -1) {
-            if (inputMin > 0) {
-                arrayDPS[index].min = parseFloat(inputMin);
-            } else {
-                arrayDPS[index].min = 0;
-            }
+function newChaosDPS(inputMin, inputMax) {
+    inputMin > 0 ? chaosDPS.min = parseFloat(inputMin) : chaosDPS.min = 0;
+    inputMax > 0 ? chaosDPS.max = parseFloat(inputMax) : chaosDPS.max = 0;
+}
 
-            if (inputMax > 0) {
-                arrayDPS[index].max = parseFloat(inputMax);
+function newFireDPS(inputMin, inputMax) {
+    inputMin > 0 ? fireDPS.min = parseFloat(inputMin) : fireDPS.min = 0;
+    inputMax > 0 ? fireDPS.max = parseFloat(inputMax) : fireDPS.max = 0;
+}
 
-            } else {
-                arrayDPS[index].max = 0;
-            }
-        }
-    }
+function newColdDPS(inputMin, inputMax) {
+    inputMin > 0 ? coldDPS.min = parseFloat(inputMin) : coldDPS.min = 0;
+    inputMax > 0 ? coldDPS.max = parseFloat(inputMax) : coldDPS.max = 0;
+}
+
+function newLightDPS(inputMin, inputMax) {
+    inputMin > 0 ? lightDPS.min = parseFloat(inputMin) : lightDPS.min = 0;
+    inputMax > 0 ? lightDPS.max = parseFloat(inputMax) : lightDPS.max = 0;
 }
 
 // Function: Modify speed value with new entry on input
@@ -117,7 +133,9 @@ function newSpeed() {
     }
 }
 
-// Function: Fill arrayResult with new entries
+// Function: Calculate results
+
+const arrayResult = [];
 
 function calculateDps() {
     arrayDPS.forEach((dps) => {
@@ -128,33 +146,22 @@ function calculateDps() {
 }
 
 function calculateDpsElem() {
-    const index1 = arrayResult.findIndex(object => {
-        return object.type === "Fire";
-    })
-    const index2 = arrayResult.findIndex(object => {
-        return object.type === "Cold";
-    })
-    const index3 = arrayResult.findIndex(object => {
-        return object.type === "Light";
-    })
+    const fire = arrayResult.find((dps) => dps.type === "Fire");
+    const cold = arrayResult.find((dps) => dps.type === "Cold");
+    const light = arrayResult.find((dps) => dps.type === "Light");
 
-    const addResult = parseFloat(arrayResult[index1].total) + parseFloat(arrayResult[index2].total) + parseFloat(arrayResult[index3].total);
+    const addResult = parseFloat(fire.total) + parseFloat(cold.total) + parseFloat(light.total);
     const result = new DpsResult(addResult, "Elemental");
     arrayResult.push(result);
 }
 
-function calculateDpsTotal() {
-    const index1 = arrayResult.findIndex(object => {
-        return object.type === "Phys";
-    })
-    const index2 = arrayResult.findIndex(object => {
-        return object.type === "Chaos";
-    })
-    const index3 = arrayResult.findIndex(object => {
-        return object.type === "Elemental";
-    })
 
-    const addResult = parseFloat(arrayResult[index1].total) + parseFloat(arrayResult[index2].total) + parseFloat(arrayResult[index3].total);
+function calculateDpsTotal() {
+    const phys = arrayResult.find((dps) => dps.type === "Phys");
+    const chaos = arrayResult.find((dps) => dps.type === "Chaos");
+    const elemental = arrayResult.find((dps) => dps.type === "Elemental");
+
+    const addResult = parseFloat(phys.total) + parseFloat(chaos.total) + parseFloat(elemental.total);
     const result = new DpsResult(addResult, "Total");
     arrayResult.push(result);
 }
@@ -162,60 +169,41 @@ function calculateDpsTotal() {
 
 // Function: Display results
 
-function display(label) {
-    if (label === "Phys" || "Chaos" || "Fire" || "Cold" || "Light" || "Elemental" || "Total") {
-        const index = arrayResult.findIndex(object => {
-            return object.type === label;
-        })
-
-        if (index != -1) {
-            switch (label) {
-                case "Phys":
-                    areaPhys.value = parseFloat(arrayResult[index].total).toFixed(2);
-                    break;
-
-                case "Chaos":
-                    areaChaos.value = parseFloat(arrayResult[index].total).toFixed(2);
-                    break;
-
-                case "Fire":
-                    areaFire.value = parseFloat(arrayResult[index].total).toFixed(2);
-                    break;
-
-                case "Cold":
-                    areaCold.value = parseFloat(arrayResult[index].total).toFixed(2);
-                    break;
-
-                case "Light":
-                    areaLight.value = parseFloat(arrayResult[index].total).toFixed(2);
-                    break;
-
-                case "Elemental":
-                    areaElemental.value = parseFloat(arrayResult[index].total).toFixed(2);
-                    break;
-
-                case "Total":
-                    areaTotal.value = parseFloat(arrayResult[index].total).toFixed(2);
-                    break;
-            }
-        }
-    }
+function displayPhys() {
+    const phys = arrayResult.find((dps) => dps.type === "Phys");
+    areaPhys.value = parseFloat(phys.total).toFixed(2);
 }
 
+function displayChaos() {
+    const chaos = arrayResult.find((dps) => dps.type === "Chaos");
+    areaChaos.value = parseFloat(chaos.total).toFixed(2);
+}
 
-// Validation Form
+function displayFire() {
+    const fire = arrayResult.find((dps) => dps.type === "Fire");
+    areaFire.value = parseFloat(fire.total).toFixed(2);
+}
 
-const formDPS = document.getElementById("formDPS");
+function displayCold() {
+    const cold = arrayResult.find((dps) => dps.type === "Cold");
+    areaCold.value = parseFloat(cold.total).toFixed(2);
+}
 
-inputS.addEventListener('input', function() {
-    this.setCustomValidity('');
-  });
+function displayLight() {
+    const light = arrayResult.find((dps) => dps.type === "Light");
+    areaLight.value = parseFloat(light.total).toFixed(2);
+}
 
-inputS.addEventListener("invalid", function() {
-    if (this.validity.valueMissing) {
-      this.setCustomValidity('Por favor ingrese velocidad de ataque!');
-    }
-});
+function displayElemental() {
+    const elemental = arrayResult.find((dps) => dps.type === "Elemental");
+    areaElemental.value = parseFloat(elemental.total).toFixed(2);
+}
+
+function displayTotal() {
+    const total = arrayResult.find((dps) => dps.type === "Total");
+    areaTotal.value = parseFloat(total.total).toFixed(2);
+}
+
 
 // Calculate DPS Buttom
 
@@ -224,26 +212,42 @@ formDPS.addEventListener("submit", (e) => {
 
     arrayResult.length = 0;
 
-    newDPS("Phys", inputMinPhys.value, inputMaxPhys.value);
-    newDPS("Chaos", inputMinChaos.value, inputMaxChaos.value);
-    newDPS("Fire", inputMinFire.value, inputMaxFire.value);
-    newDPS("Cold", inputMinCold.value, inputMaxCold.value);
-    newDPS("Light", inputMinLight.value, inputMaxLight.value);
+    // Input
+    newPhysicalDPS(inputMinPhys.value, inputMaxPhys.value);
+    newChaosDPS(inputMinChaos.value, inputMaxChaos.value);
+    newFireDPS(inputMinFire.value, inputMaxFire.value);
+    newColdDPS(inputMinCold.value, inputMaxCold.value);
+    newLightDPS(inputMinLight.value, inputMaxLight.value);
     newSpeed();
 
+    // Calculate
     calculateDps();
     calculateDpsElem();
     calculateDpsTotal();
 
-    display("Phys");
-    display("Chaos");
-    display("Fire");
-    display("Cold");
-    display("Light");
-    display("Elemental");
-    display("Total");
+    // Display
+    displayPhys();
+    displayChaos();
+    displayFire();
+    displayCold();
+    displayLight();
+    displayElemental();
+    displayTotal();
 
+    // Weapon Card
     createWeapon();
+
+    // Toastify
+    Toastify({
+        text: "Arma añadida a la lista",
+        duration: 2000,
+        gravity: "bottom",
+        position: "right",
+        stopOnFocus: false,
+        style: {
+            background: "linear-gradient(to left, rgba(43, 51, 68, 1), rgba(20, 31, 49, 1))",
+        },
+    }).showToast();
 });
 
 
@@ -256,8 +260,8 @@ class WeaponCard {
         this.phys = phys;
         this.elemental = elemental;
         this.weaponType = weaponType;
-        this.tier = setTier(this.phys, this.elemental, this.weaponType);
-        this.img = setImg(this.weaponType);
+        this.handed = setHanded(this.weaponType);
+        this.tier = setTier(this.phys, this.elemental, this.handed);
         this.id = arrayWeapons.length;
     }
 }
@@ -266,66 +270,113 @@ let arrayWeapons = [];
 
 arrayWeapons = localStorage.getItem("weapons") ? JSON.parse(localStorage.getItem("weapons")) : [];
 
-// Function: Set Card Tier
+// Function: Set Handed
 
-function setTier(phys, elemental, weaponType) {
-    if (weaponType === "Espada (1 mano)" || weaponType === "Hacha (1 mano)" || weaponType === "Maza (1 mano)" || weaponType === "Arco") {
-        if (elemental >= 600 || phys >= 600) {
-            return "S"
-    
-        } else if (elemental >= 500 || phys >= 500) {
-            return "A"
-    
-        } else if (elemental >= 400 || phys >= 400) {
-            return "B"
+function setHanded(type) {
+    if (type === "twoHandSword" || type === "twoHandAxe" || type === "twoHandMace") {
+        return 2;
+    }
 
-        } else {
-            return "C"
-        }
-
-    } else {
-        if (elemental >= 800 || phys >= 800) {
-            return "S"
-    
-        } else if (elemental >= 700 || phys >= 700) {
-            return "A"
-    
-        } else if (elemental >= 600 || phys >= 600) {
-            return "B"
-
-        } else {
-            return "C"
-        }
-    } 
+    return 1;
 }
 
-// Function: Set Card ID
+// Function: Set Tier
 
-function setImg(weaponType) {
-    if (weaponType === "Espada (1 mano)") {
-        return "oneHandSword"
-
-    } else if (weaponType === "Hacha (1 mano)") {
-        return "oneHandAxe"
-
-    } else if (weaponType === "Maza (1 mano)") {
-        return "oneHandMace"
-
-    } else if (weaponType === "Espada (2 manos)") {
-        return "twoHandSword"
-
-    } else if (weaponType === "Hacha (2 manos)") {
-        return "twoHandAxe"
-
-    } else if (weaponType === "Maza (2 manos)") {
-        return "twoHandMace"
-
-    } else if (weaponType === "Arco") {
-        return "bow"
-
-    } else {
-        return "Error"
+function setTier(phys, elemental, handed) {
+    if (handed === 1) {
+        return setTierOne(phys, elemental);
     }
+
+    return setTierTwo(phys, elemental);
+}
+
+// One-Handed:
+
+function setTierOne(phys, elemental) {
+    if (elemental > phys) {
+        return setTierOneElemental(elemental);
+    }
+
+    return setTierOnePhys(phys);
+}
+
+function setTierOneElemental(elemental) {
+    // One-Handed Elemental:
+    if (elemental >= 600) {
+        return "S"
+    }
+
+    if (elemental >= 500) {
+        return "A"
+    }
+
+    if (elemental >= 400) {
+        return "B"
+    }
+
+    return "C"
+
+}
+
+function setTierOnePhys(phys) {
+    // One-Handed Physical:
+    if (phys >= 600) {
+        return "S"
+    }
+
+    if (phys >= 500) {
+        return "A"
+    }
+
+    if (phys >= 400) {
+        return "B"
+    }
+
+    return "C"
+}
+
+// Two-Handed:
+
+function setTierTwo(phys, elemental) {
+    if (elemental > phys) {
+        return setTierTwoElemental(elemental);
+    }
+
+    return setTierTwoPhys(phys);
+}
+
+function setTierTwoElemental(elemental) {
+    // Two-Handed Elemental
+    if (elemental >= 800) {
+        return "S"
+    }
+
+    if (elemental >= 700) {
+        return "A"
+    }
+
+    if (elemental >= 600) {
+        return "B"
+    }
+
+    return "C"
+}
+
+function setTierTwoPhys(phys) {
+    // Two-handed Physical
+    if (phys >= 800) {
+        return "S"
+    }
+
+    if (phys >= 700) {
+        return "A"
+    }
+
+    if (phys >= 600) {
+        return "B"
+    }
+
+    return "C"
 }
 
 // Function: Create new Weapon
@@ -353,7 +404,7 @@ function showCards() {
         card.innerHTML = `
             <div class="row g-0">
                 <div class="col-md-4 d-flex justify-content-center">
-                    <img src="../img/weapons/${weapon.img}.png" class="img-fluid rounded-start" alt="${weapon.weaponType}">
+                    <img src="../img/weapons/${weapon.weaponType}.png" class="img-fluid rounded-start" alt="${weapon.weaponType}">
                 </div>
                 <div class="col-md-8">
                 <div class="card-body row">
@@ -373,7 +424,7 @@ function showCards() {
         cardContainer.appendChild(card);
 
         const btn = document.getElementById(`btn${weapon.id}`);
-        btn.addEventListener("click", () =>{
+        btn.addEventListener("click", () => {
             eraseWeapon(weapon.id);
         })
     })
@@ -395,9 +446,31 @@ function eraseWeapon(id) {
 const eraseCardsBtn = document.getElementById("eraseCardsBtn");
 
 eraseCardsBtn.addEventListener("click", () => {
-    arrayWeapons = [];
-    showCards();
-    localStorage.clear();
+    Swal.fire({
+        title: 'Eliminar todas las armas?',
+        icon: 'warning',
+        background:"rgb(43, 51, 68)",
+        color: "rgb(203, 208, 216)",
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Eliminar',
+        cancelButtonText: `Cancelar`
+    }).then((result) => {
+        if (result.isConfirmed) {
+            arrayWeapons = [];
+            showCards();
+            localStorage.clear();
+            Swal.fire({
+                title: `Todas las armas han sido eliminadas`,
+                icon: `success`,
+                background: `rgb(43, 51, 68)`,
+                color: "rgb(203, 208, 216)",
+            }
+              
+            )
+        }
+    })
 })
 
 

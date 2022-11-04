@@ -7,12 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Explora guías y builds totalmente en español del proclamado juego rpg Path of Exile">
-    <meta name="keywords"
+    <meta name="keywords" 
         content="isla de marea, path of exile, poe, guías, guías en español, builds, path of building, economía poe, acción rpg, 3.19, lake of Kalandra, league starter, herramientas útiles, liga, principiante, ayuda">
+    <title>Isla de Marea | Guía para principiantes de Path of Exile</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     <!-- Hoja de estilos -->
     <link rel="stylesheet" href="../css/style.css">
@@ -26,10 +30,6 @@
 
     <!-- Aos-Animate On Scroll Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <title>Isla de Marea | Guía para principiantes de Path of Exile</title>
-</head>
-
 <body>
     <!-- Header Nav Bootstrap -->
     <header>
@@ -78,11 +78,18 @@
         </div>
     </header>
 
+    
     <!-- Container  Main + Footer para establecer fondo en comun -->
     <div class="container fondo">
-
+    
         <!-- Grid Main -->
-        <main class="container-fluid  main">
+        <main class="container-fluid  main position-relative">
+
+            <div class="d-inline-flex">
+                <a><img class="m-3 flag" src="../img/english.png" alt="Uk Flag"></a>
+                <a><img class="m-3 flag" src="../img/spanish.png" alt="Uk Flag"></a>
+            </div>
+
             <h1 class="d-flex justify-content-center">Calculadora de DPS para Path of Exile</h1>
 
             <section class="mainSection text-center">
@@ -202,13 +209,13 @@
 
                         <div class="col col-12 col-sm-4">
                             <select class="form-select" id="selectType" required>
-                                <option value="Espada (1 mano)">Espada (1 mano)</option>
-                                <option value="Hacha (1 mano)">Hacha (1 mano)</option>
-                                <option value="Maza (1 mano)">Maza (1 mano)</option>
-                                <option value="Espada (2 manos)">Espada (2 manos)</option>
-                                <option value="Hacha (2 manos)">Hacha (2 manos)</option>
-                                <option value="Maza (2 manos)">Maza (2 manos)</option>
-                                <option value="Arco">Arco</option>
+                                <option value="oneHandSword">Espada (1 mano)</option>
+                                <option value="oneHandAxe">Hacha (1 mano)</option>
+                                <option value="oneHandMace">Maza (1 mano)</option>
+                                <option value="twoHandSword">Espada (2 manos)</option>
+                                <option value="twoHandAxe">Hacha (2 manos)</option>
+                                <option value="twoHandMace">Maza (2 manos)</option>
+                                <option value="bow">Arco</option>
                             </select>
                         </div>
                     </div>
@@ -383,6 +390,8 @@
             <br><br>
         </main>
 
+        
+
         <!-- Grid Footer -->
         <footer class="container text-center footer" data-aos="zoom-in" data-aos-duration="1000">
             <div class="row row-cols-3 gy-5">
@@ -424,7 +433,14 @@
     <!-- Script Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
+
+    <!-- SweetAlert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <!-- Script AOS-Animate On Scroll Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -432,7 +448,7 @@
         AOS.init();
     </script>
 
-    <!-- Javascript -->
+    <!-- JavaScript -->
     <script src="../scripts/main.js"></script>
 </body>
 </html>

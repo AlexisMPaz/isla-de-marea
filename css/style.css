@@ -1,7 +1,7 @@
-.footer .logoFooter, header .nav .logoHeader {
+.flag:hover, .footer .logoFooter, header .nav .logoHeader {
   transition: 300ms ease-in-out;
 }
-.footer .logoFooter:hover, header .nav .logoHeader:hover {
+.flag:hover, .footer .logoFooter:hover, header .nav .logoHeader:hover {
   transform: scale(1.1);
 }
 
