@@ -1,0 +1,43 @@
+[
+    {
+        "expTitle": "DPS Calculator for Path of Exile",
+        "expPara1": "The DPS formula  of a weapon is very simple, but it can be tedious due to the different types of damage it can have simultaneously, so it never hurts to have a calculator on hand to make it easier.",
+        "expPara2": "To use it, you just have to fill in the minimum and maximum damage fields that your weapon has and enter the attack speed. The class is used to evaluate the usefulness of the weapon.",
+        "id": "expText"
+    },
+    {
+        "id": "labelText",
+        "physical": "Physical",
+        "chaos": "Chaos",
+        "fire": "Fire",
+        "cold": "Cold",
+        "light": "Lightning",
+        "elemental": "Elemental",
+        "total": "Total",
+        "speed": "Speed",
+        "class": "Class"
+    },
+    {
+        "id": "optionText",
+        "oneSword": "Sword (1 hand)",
+        "oneAxe": "Axe (1 hand)",
+        "oneMace": "Mace (1 hand)",
+        "twoSword": "Sword (2 hand)",
+        "twoAxe": "Axe (2 hand)",
+        "twoMace": "Mace (2 hand)",
+        "bow": "Bow"
+    },
+    {
+        "id": "evaluationText",
+        "title": "Weapon Evaluation:",
+        "intro": "Depending on class, total physical and elemental DPS, weapons can be grouped by tier which determines their utility and thus their value:",
+        "paraC": "They can't take you very far in the game, but at least they're good for the main story. You should only buy it if you're really short on currency or need to save up for a mandatory item.",
+        "priceC": "Estimated Price: Under 20 Chaos Orb",
+        "paraB": " Acceptable for white tier atlas maps but less effective at higher tiers. It is recommended to be your first weapon to start exploring the atlas of worlds.",
+        "priceB": "Estimated Price: Between 20 Chaos Orb and 2 Divine Orb",
+        "paraA": "This tier includes all the weapons that can be considered final equipment for the average player. It can be used for all content although for the most difficult fights it may lack damage.",
+        "priceA": "Estimated price: Greater than 2 Divine Orb",
+        "paraS": "The best weapons one can hope to get. There are few on the market because generally one prefers to create it with their own materials, but if you have too much wealth or do not know how to create it, it is highly recommended to buy it.",
+        "priceS": "Estimated price: Greater than 30 Divine Orb"
+    }
+]

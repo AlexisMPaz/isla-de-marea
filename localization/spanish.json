@@ -1,0 +1,43 @@
+[
+    {
+        "id": "expText",
+        "expTitle": "Calculadora de DPS para Path of Exile",
+        "expPara1": "La fórmula para obtener el DPS de un arma es muy sencilla pero puede resultar tediosa por los diferentes tipos de daño que puede tener simultaneamente, por eso nunca esta de más tener a mano una calculadora que te facilite la tarea.",
+        "expPara2": "Para utilizarla solo debes llenar los campos de daño mínimo y máximo que tu arma posea e ingresar la velocidad de ataque. La clase sirve para evaluar la utilidad del arma."
+    },
+    {
+        "id": "labelText",
+        "physical": "Físico",
+        "chaos": "Caos",
+        "fire": "Fuego",
+        "cold": "Hielo",
+        "light": "Rayo",
+        "elemental": "Elemental",
+        "total": "Total",
+        "speed": "Velocidad",
+        "class": "Clase"
+    },
+    {
+        "id": "optionText",
+        "oneSword": "Espada (1 mano)",
+        "oneAxe": "Hacha (1 mano)",
+        "oneMace": "Maza (1 mano)",
+        "twoSword": "Espada (2 manos)",
+        "twoAxe": "Hacha (2 manos)",
+        "twoMace": "Maza (2 manos)",
+        "bow": "Arco"
+    },
+    {
+        "id": "evaluationText",
+        "title": "Evaluación de armas:",
+        "intro": "Dependiendo de la clase y el DPS físico y elemental total, las armas se pueden agrupar por tier que determina su utilidad y por lo tanto su valor:",
+        "paraC": "No te pueden llevar muy lejos en el juego pero al menos sirven para la historia principal. Solo deberías comprarla si estas muy corto de moneda o necesitas ahorrar para un objeto mandatorio.",
+        "priceC": "Precio estimado: Menor a 20 Chaos Orb ",
+        "paraB": " Aceptable para mapas del atlas de tier blanco pero menos efectiva en tiers más altos. Es recomendable para ser tu primer arma para empezar a explorar el atlas de mundos.",
+        "priceB": "Precio estimado: Entre 20 Chaos Orb y 2 Divine Orb",
+        "paraA": "En este tier entran todas las armas que pueden considerarse equipo final para el jugador promedio. Puede usarse para todo el contenido aunque para las peleas mas difíciles puede que falte daño.",
+        "priceA": "Precio estimado: Mayor a 2 Divine Orb",
+        "paraS": "Las mejores armas que uno puede aspirar a conseguir. Hay pocas en el mercado porque generalmente uno prefiere crearla con sus propios materiales pero si te sobran riquezas o no sabes como crearla es muy recomendable comprarla.",
+        "priceS": "Precio estimado: Mayor a 30 Divine Orb"
+    }
+]

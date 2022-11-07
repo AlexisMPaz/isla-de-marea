@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Explora guías y builds totalmente en español del proclamado juego rpg Path of Exile">
-    <meta name="keywords" 
+    <meta name="keywords"
         content="isla de marea, path of exile, poe, guías, guías en español, builds, path of building, economía poe, acción rpg, 3.19, lake of Kalandra, league starter, herramientas útiles, liga, principiante, ayuda">
     <title>Isla de Marea | Guía para principiantes de Path of Exile</title>
 
@@ -30,6 +30,7 @@
 
     <!-- Aos-Animate On Scroll Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 <body>
     <!-- Header Nav Bootstrap -->
     <header>
@@ -78,38 +79,30 @@
         </div>
     </header>
 
-    
+
     <!-- Container  Main + Footer para establecer fondo en comun -->
     <div class="container fondo">
-    
+
         <!-- Grid Main -->
         <main class="container-fluid  main position-relative">
 
             <div class="d-inline-flex">
-                <a><img class="m-3 flag" src="../img/english.png" alt="Uk Flag"></a>
-                <a><img class="m-3 flag" src="../img/spanish.png" alt="Uk Flag"></a>
+                <a id="spanishBtn"><img class="m-3 flag" src="../img/spanish.png" alt="Uk Flag"></a>
+                <a id="englishBtn"><img class="m-3 flag" src="../img/english.png" alt="Uk Flag"></a>
             </div>
 
-            <h1 class="d-flex justify-content-center">Calculadora de DPS para Path of Exile</h1>
+            <h1 class="d-flex justify-content-center" id="expTitle"></h1>
 
             <section class="mainSection text-center">
-                <p>
-                    La fórmula para obtener el DPS de un arma es muy sencilla pero puede resultar tediosa por los
-                    diferentes tipos de daño que puede simultaneamente,
-                    por eso nunca esta de más tener a mano una calculadora que te facilite la tarea.
-                </p>
-
-                <p>
-                    Para utilizarla solo debes llenar los campos de daño mínimo y máximo que tu arma posea e ingresar la
-                    velocidad de ataque. La clase sirve para evaluar la utilidad del arma.
-                </p>
+                <p id="expPara1"></p>
+                <p id="expPara2"></p>
             </section>
 
-            <section class="container row row-cols-1 d-flex justify-content-around" id="calculator" >
-                
+            <section class="container row row-cols-1 d-flex justify-content-around" id="calculator">
+
                 <form class="col-md-12 col-xl-6" id="formDPS">
                     <div class=" row row-cols-4 d-flex align-items-center">
-                        <h4 class="col col-12 col-sm-3 text-center">Físico</h4>
+                        <h4 class="col col-12 col-sm-3 text-center" id="labelPhysical"></h4>
                         <div class="col col-5 col-sm-4">
                             <input type="number" class="form-control" id="inputMinPhys" placeholder="Min" step="1"
                                 min="0" max="9999">
@@ -126,7 +119,7 @@
                     <br>
 
                     <div class="row row-cols-4 d-flex align-items-center">
-                        <h4 class="col col-12 col-sm-3 text-center">Caos</h4>
+                        <h4 class="col col-12 col-sm-3 text-center" id="labelChaos"></h4>
                         <div class="col col-5 col-sm-4">
                             <input type="number" class="form-control" id="inputMinChaos" placeholder="Min" step="1"
                                 min="0" max="9999">
@@ -143,7 +136,7 @@
                     <br>
 
                     <div class="row row-cols-4 d-flex align-items-center">
-                        <h4 class="col col-12 col-sm-3 text-center">Fuego</h4>
+                        <h4 class="col col-12 col-sm-3 text-center" id="labelFire"></h4>
                         <div class="col col-5 col-sm-4">
                             <input type="number" class="form-control" id="inputMinFire" placeholder="Min" step="1"
                                 min="0" max="9999">
@@ -160,7 +153,7 @@
                     <br>
 
                     <div class="row row-cols-4 d-flex align-items-center">
-                        <h4 class="col col-12 col-sm-3 text-center">Hielo</h4>
+                        <h4 class="col col-12 col-sm-3 text-center" id="labelCold"></h4>
                         <div class="col col-5 col-sm-4">
                             <input type="number" class="form-control" id="inputMinCold" placeholder="Min" step="1"
                                 min="0" max="9999">
@@ -177,7 +170,7 @@
                     <br>
 
                     <div class="row row-cols-4 d-flex align-items-center">
-                        <h4 class="col col-12 col-sm-3 text-center">Rayo</h4>
+                        <h4 class="col col-12 col-sm-3 text-center" id="labelLight"></h4>
                         <div class="col col-5 col-sm-4">
                             <input type="number" class="form-control" id="inputMinLight" placeholder="Min" step="1"
                                 min="0" max="9999">
@@ -194,7 +187,7 @@
                     <br>
 
                     <div class="row row-cols-4 d-flex align-items-center">
-                        <h4 class="col col-12 col-sm-3 text-center">Velocidad</h4>
+                        <h4 class="col col-12 col-sm-3 text-center" id="labelSpeed"></h4>
 
                         <div class="col col-12 col-sm-4">
                             <input type="number" class="form-control" id="inputS" placeholder="0.00" step="0.01" min="0"
@@ -205,19 +198,9 @@
                     <br>
 
                     <div class="row row-cols-4 d-flex align-items-center">
-                        <h4 class="col col-12 col-sm-3 text-center">Clase</h4>
+                        <h4 class="col col-12 col-sm-3 text-center" id="labelClass"></h4>
 
-                        <div class="col col-12 col-sm-4">
-                            <select class="form-select" id="selectType" required>
-                                <option value="oneHandSword">Espada (1 mano)</option>
-                                <option value="oneHandAxe">Hacha (1 mano)</option>
-                                <option value="oneHandMace">Maza (1 mano)</option>
-                                <option value="twoHandSword">Espada (2 manos)</option>
-                                <option value="twoHandAxe">Hacha (2 manos)</option>
-                                <option value="twoHandMace">Maza (2 manos)</option>
-                                <option value="bow">Arco</option>
-                            </select>
-                        </div>
+                        <div class="col col-12 col-sm-4" id="selectContainer"></div>
                     </div>
 
                     <div class="calculatorSection d-flex justify-content-around">
@@ -228,7 +211,7 @@
 
                 <div class="col-12 col-lg-6">
                     <div class="row row-cols-2 d-flex align-items-center">
-                        <h4 class="col col-12 col-sm-6 text-center">Físico: </h4>
+                        <h4 class="col col-12 col-sm-6 text-center" id="labelPhysical2"></h4>
                         <div class="col col-12 col-sm-6">
                             <textarea readonly class="form-control" id="areaPhys" rows="1"
                                 placeholder="0.00"></textarea>
@@ -238,7 +221,7 @@
                     <br>
 
                     <div class="row row-cols-2 d-flex align-items-center">
-                        <h4 class="col col-12 col-sm-6 text-center">Caos: </h4>
+                        <h4 class="col col-12 col-sm-6 text-center" id="labelChaos2"></h4>
                         <div class="col col-12 col-sm-6">
                             <textarea readonly class="form-control" id="areaChaos" rows="1"
                                 placeholder="0.00"></textarea>
@@ -248,7 +231,7 @@
                     <br>
 
                     <div class="row row-cols-2 d-flex align-items-center">
-                        <h4 class="col col-12 col-sm-6 text-center">Fuego: </h4>
+                        <h4 class="col col-12 col-sm-6 text-center" id="labelFire2"></h4>
                         <div class="col col-12 col-sm-6">
                             <textarea readonly class="form-control" id="areaFire" rows="1"
                                 placeholder="0.00"></textarea>
@@ -258,7 +241,7 @@
                     <br>
 
                     <div class="row row-cols-2 d-flex align-items-center">
-                        <h4 class="col col-12 col-sm-6 text-center">Hielo: </h4>
+                        <h4 class="col col-12 col-sm-6 text-center" id="labelCold2"></h4>
                         <div class="col col-12 col-sm-6">
                             <textarea readonly class="form-control" id="areaCold" rows="1"
                                 placeholder="0.00"></textarea>
@@ -268,7 +251,7 @@
                     <br>
 
                     <div class="row row-cols-2 d-flex align-items-center">
-                        <h4 class="col col-12 col-sm-6 text-center">Rayo: </h4>
+                        <h4 class="col col-12 col-sm-6 text-center" id="labelLight2"></h4>
                         <div class="col col-12 col-sm-6">
                             <textarea readonly class="form-control" id="areaLight" rows="1"
                                 placeholder="0.00"></textarea>
@@ -278,7 +261,7 @@
                     <br>
 
                     <div class="row row-cols-2 d-flex align-items-center">
-                        <h4 class="col col-12 col-sm-6 text-center">Elemental:</h4>
+                        <h4 class="col col-12 col-sm-6 text-center" id="labelElemental"></h4>
                         <div class="col col-12 col-sm-6">
                             <textarea readonly class="form-control" id="areaElemental" rows="1"
                                 placeholder="0.00"></textarea>
@@ -288,7 +271,7 @@
                     <br>
 
                     <div class="row row-cols-2 d-flex align-items-center">
-                        <h4 class="col col-12 col-sm-6 text-center">Total: </h4>
+                        <h4 class="col col-12 col-sm-6 text-center" id="labelTotal"></h4>
                         <div class="col col-12 col-sm-6">
                             <textarea readonly class="form-control" id="areaTotal" rows="1"
                                 placeholder="0.00"></textarea>
@@ -309,88 +292,60 @@
             <div class="container row row-cols-2" id="cardContainer"></div>
 
             <section class="mainSection">
-                <h2 class="text-center">Evaluación de armas:</h2>
+                <h2 class="text-center" id="evaluationTitle"></h2>
 
-                <p>
-                    Dependiendo de la clase y el DPS físico y elemental total, las armas se pueden agrupar por tier que
-                    determina su utilidad y por lo tanto su valor:
-                </p>
+                <p id="evaluationIntro"></p>
 
                 <div class="reference">
-                    <h3 class="tierC">Tier C:</h3>
-
                     <div class="d-flex align-items-center">
-                        <h5>
-                            Precio estimado: Menor a 20 Chaos Orb
-                            <img src="../img/chaos.png" alt="Chaos Orb Path of Exile">
-                            <h5>
-
+                        <h3 class="tierC m-0">Tier C:</h3>
+                        <img class="m-2" src="../img/chaos.png" alt="Chaos Orb Path of Exile">
                     </div>
 
-                    <p>
-                        No te pueden llevar muy lejos en el juego pero al menos sirven para la historia principal. Solo
-                        deberías comprarla si estas muy corto de moneda o necesitas ahorrar para un objeto mandatorio.
-                    </p>
-
+                    <p class="mb-3" id="evaluationParaC"></p>
+                    <h5 id="evaluationPriceC"></h5>
                 </div>
 
                 <div class="reference">
-                    <h3 class="tierB">Tier B:</h3>
+
 
                     <div class="d-flex align-items-center">
-                        <h5>
-                            Precio estimado: Entre 20 Chaos Orb
-                            <img src="../img/chaos.png" alt="Chaos Orb Path of Exile">
-                            y 2 Divine Orb
-                            <img src="../img/divine.png" alt="Divine Orb Path of Exile">
-                            <h5>
+                        <h3 class="tierB m-0">Tier B:</h3>
+                        <img class="m-2" src="../img/chaos.png" alt="Chaos Orb Path of Exile">
+                        <img class="m-2" src="../img/divine.png" alt="Divine Orb Path of Exile">
                     </div>
 
-                    <p>
-                        Aceptable para mapas del atlas de tier blanco pero menos efectiva en tiers más altos. Es
-                        recomendable para ser tu primer arma para empezar a explorar el atlas de mundos.
-                    </p>
+                    <p class="mb-3" id="evaluationParaB"></p>
+                    <h5 id="evaluationPriceB"><h5>
                 </div>
 
                 <div class="reference">
-                    <h3 class="tierA">Tier A:</h3>
-
                     <div class="d-flex align-items-center">
-                        <h5>
-                            Precio estimado: Mayor a 2 Divine Orb
-                            <img src="../img/divine.png" alt="Divine Orb Path of Exile">
-                            <h5>
+                        <h3 class="tierA m-0">Tier A:</h3>
+                        <img class="m-2" src="../img/divine.png" alt="Divine Orb Path of Exile">
+                        <img class="m-2" src="../img/divine.png" alt="Divine Orb Path of Exile">
                     </div>
 
-                    <p>
-                        En este tier entran todas las armas que pueden considerarse equipo final para el jugador
-                        promedio.
-                        Puede usarse para todo el contenido aunque para las peleas mas difíciles puede que falte daño.
-                    </p>
+                    <p class="mb-3" id="evaluationParaA"></p>
+                    <h5 id="evaluationPriceA"></h5>
                 </div>
 
                 <div class="reference">
-                    <h3 class="tierS">Tier S:</h3>
-
                     <div class="d-flex align-items-center">
-                        <h5>
-                            Precio estimado: Mayor a 30 Divine Orb <img src="../img/divine.png"
-                                alt="Divine Orb Path of Exile">
-                            <h5>
+                        <h3 class="tierS m-0">Tier S:</h3>
+                        <img class="m-2" src="../img/divine.png" alt="Divine Orb Path of Exile">
+                        <img class="m-2" src="../img/divine.png" alt="Divine Orb Path of Exile">
+                        <img class="m-2" src="../img/divine.png" alt="Divine Orb Path of Exile">
                     </div>
 
-                    <p>
-                        Las mejores armas que uno puede aspirar a conseguir. Hay pocas en el mercado porque generalmente
-                        uno prefiere crearla con sus propios materiales pero si te sobran riquezas o no sabes como crearla es muy
-                        recomendable comprarla.
-                    </p>
+                    <p class="mb-3" id="evaluationParaS"></p>
+                    <h5 id="evaluationPriceS"></h5>
                 </div>
             </section>
-
             <br><br>
         </main>
 
-        
+
 
         <!-- Grid Footer -->
         <footer class="container text-center footer" data-aos="zoom-in" data-aos-duration="1000">
@@ -432,9 +387,8 @@
 
     <!-- Script Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous">
-    </script>
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+        </script>
 
     <!-- SweetAlert2 -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -449,6 +403,8 @@
     </script>
 
     <!-- JavaScript -->
-    <script src="../scripts/main.js"></script>
+    <script src="../scripts/localization.js"></script>
+    <script src="../scripts/calculator.js"></script>
 </body>
+
 </html>
