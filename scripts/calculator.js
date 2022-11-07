@@ -202,6 +202,35 @@ function displayTotal() {
     areaTotal.value = parseFloat(total.total).toFixed(2);
 }
 
+// Toastify Language
+
+const toastEnglish = "Weapon added to the list.";
+const toastSpanish = "Arma añadida a la lista.";
+const toastBackground = "linear-gradient(to left, rgba(43, 51, 68, 1), rgba(20, 31, 49, 1))";
+
+function toastSelect() {
+    let languageStorage = localStorage.getItem("language");
+    if (languageStorage === "english") {
+        toast(toastEnglish, toastBackground);
+
+    } else {
+        toast(toastSpanish, toastBackground);
+    }
+}
+
+function toast(language, bg) {
+    Toastify({
+        text: language,
+        duration: 2000,
+        gravity: "bottom",
+        position: "right",
+        stopOnFocus: false,
+        style: {
+            background: bg,
+        },
+    }).showToast();
+}
+
 
 // Calculate DPS Buttom
 
@@ -237,16 +266,8 @@ formDPS.addEventListener("submit", (e) => {
     console.log(arrayWeapons);
 
     // Toastify
-    Toastify({
-        text: "Arma añadida a la lista",
-        duration: 2000,
-        gravity: "bottom",
-        position: "right",
-        stopOnFocus: false,
-        style: {
-            background: "linear-gradient(to left, rgba(43, 51, 68, 1), rgba(20, 31, 49, 1))",
-        },
-    }).showToast();
+    toastSelect();
+   
 });
 
 
