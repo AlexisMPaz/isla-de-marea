@@ -281,7 +281,7 @@ class WeaponCard {
         this.elemental = elemental;
         this.weaponType = weaponType;
         this.handed = setHanded(this.weaponType);
-        this.title = setTitle(this.weaponType, this.handed);
+        this.title = setTitle(this.weaponType);
         this.tier = setTier(this.phys, this.elemental, this.handed);
         this.id = arrayWeapons.length;
     }
@@ -293,44 +293,19 @@ arrayWeapons = localStorage.getItem("weapons") ? JSON.parse(localStorage.getItem
 
 // Function Set Title
 
-function setTitle(type, handed) {
-    if (handed === 1) {
-        return setTitleOne(type);
-    }
-
-    return setTitleTwo(type);
+const titles = {
+    oneHandSword: `Espada (Una Mano)`,
+    oneHandAxe: `Hacha (Una Mano)`,
+    oneHandMace: `Maza (Una Mano)`,
+    twoHandSword: `Espada (Dos Manos)`,
+    twoHandAxe: `Hacha (Dos Manos)`,
+    twoHandMace: `Maza (Dos Manos)`,
+    bow: `Arco`,
 }
 
-// Title: One-Handed:
-
-function setTitleOne(type) {
-    if (type === "oneHandSword") {
-        return "Espada (Una Mano)"
-    }
-
-    if (type === "oneHandAxe") {
-        return "Hacha (Una Mano)"
-    }
-
-    if (type === "oneHandMace") {
-        return "Maza (Una Mano)"
-    }
-
-    return "Arco"
+function setTitle(type) {
+    return titles[type];
 }
-
-function setTitleTwo(type) {
-    if (type === "twoHandSword") {
-        return "Espada (Dos Manos)"
-    }
-
-    if (type === "twoHandAxe") {
-        return "Hacha (Dos Manos)"
-    }
-
-    return "Maza (Dos Manos)"
-}
-
 
 // Function: Set Handed
 
