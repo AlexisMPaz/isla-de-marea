@@ -321,51 +321,32 @@ function setHanded(type) {
 
 function setTier(phys, elemental, handed) {
     if (handed === 1) {
-        return setTierOne(phys, elemental);
+        return tierOneHand(phys, elemental);
     }
 
-    return setTierTwo(phys, elemental);
+    return tierTwoHand(phys, elemental);
 }
 
 // Tier: One-Handed:
 
-function setTierOne(phys, elemental) {
+function tierOneHand(phys, elemental) {
     if (elemental > phys) {
-        return setTierOneElemental(elemental);
+        return tierOneHandDamage(elemental);
     }
 
-    return setTierOnePhys(phys);
+    return tierOneHandDamage(phys);
 }
 
-function setTierOneElemental(elemental) {
-    // One-Handed Elemental:
-    if (elemental >= 600) {
+function tierOneHandDamage(damage) {
+    if (damage >= 600) {
         return "S"
     }
 
-    if (elemental >= 500) {
+    if (damage >= 500) {
         return "A"
     }
 
-    if (elemental >= 400) {
-        return "B"
-    }
-
-    return "C"
-
-}
-
-function setTierOnePhys(phys) {
-    // One-Handed Physical:
-    if (phys >= 600) {
-        return "S"
-    }
-
-    if (phys >= 500) {
-        return "A"
-    }
-
-    if (phys >= 400) {
+    if (damage >= 400) {
         return "B"
     }
 
@@ -374,42 +355,24 @@ function setTierOnePhys(phys) {
 
 // Tier: Two-Handed:
 
-function setTierTwo(phys, elemental) {
+function tierTwoHand(phys, elemental) {
     if (elemental > phys) {
-        return setTierTwoElemental(elemental);
+        return tierTwoHandDamage(elemental);
     }
 
-    return setTierTwoPhys(phys);
+    return tierTwoHandDamage(phys);
 }
 
-function setTierTwoElemental(elemental) {
-    // Two-Handed Elemental
-    if (elemental >= 800) {
+function tierTwoHandDamage(damage) {
+    if (damage >= 800) {
         return "S"
     }
 
-    if (elemental >= 700) {
+    if (damage >= 700) {
         return "A"
     }
 
-    if (elemental >= 600) {
-        return "B"
-    }
-
-    return "C"
-}
-
-function setTierTwoPhys(phys) {
-    // Two-handed Physical
-    if (phys >= 800) {
-        return "S"
-    }
-
-    if (phys >= 700) {
-        return "A"
-    }
-
-    if (phys >= 600) {
+    if (damage >= 600) {
         return "B"
     }
 
