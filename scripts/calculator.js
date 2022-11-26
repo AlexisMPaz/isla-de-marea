@@ -392,7 +392,7 @@ function tierTwoHandDamage(damage) {
 // Function: Create new Weapon
 
 function createWeapon() {
-    const newWeapon = new WeaponCard(areaPhys.value, areaElemental.value, selectType.value);
+    const newWeapon = new WeaponCard(parseFloat(areaPhys.value), parseFloat(areaElemental.value), selectType.value);
     arrayWeapons.push(newWeapon);
     localStorage.setItem("weapons", JSON.stringify(arrayWeapons));
 }
