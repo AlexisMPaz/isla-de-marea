@@ -322,45 +322,52 @@ function setHanded(type) {
 function setTier(phys, elemental, handed) {
     if (handed === 1) {
         return tierOneHand(phys, elemental);
+    } else {
+        return tierTwoHand(phys, elemental);
     }
-
-    return tierTwoHand(phys, elemental);
 }
 
 // Tier: One-Handed:
 
 function tierOneHand(phys, elemental) {
-    if (elemental > phys) {
-        return tierOneHandDamage(elemental);
+    if (parseFloat(elemental) >= parseFloat(phys)) {
+        return tierOneHandDamage(parseFloat(elemental));
     }
-
-    return tierOneHandDamage(phys);
+    
+    if (phys >= elemental) {
+        return tierOneHandDamage(parseFloat(phys));
+    }
 }
 
 function tierOneHandDamage(damage) {
     if (damage >= 600) {
-        return "S"
-    }
+        return "S";
+    } 
 
     if (damage >= 500) {
-        return "A"
+        return "A";
     }
 
     if (damage >= 400) {
-        return "B"
+        return "B";
+
     }
 
-    return "C"
+    if (damage < 400) {
+        return "C";
+    }
 }
 
 // Tier: Two-Handed:
 
 function tierTwoHand(phys, elemental) {
-    if (elemental > phys) {
-        return tierTwoHandDamage(elemental);
+    if (parseFloat(elemental) >= parseFloat(phys)) {
+        return tierTwoHandDamage(parseFloat(elemental));
     }
 
-    return tierTwoHandDamage(phys);
+    if (phys >= elemental) {
+        return tierTwoHandDamage(parseFloat(phys));
+    }
 }
 
 function tierTwoHandDamage(damage) {
@@ -374,9 +381,12 @@ function tierTwoHandDamage(damage) {
 
     if (damage >= 600) {
         return "B"
-    }
 
-    return "C"
+    } 
+    
+    if (damage < 600) {
+        return "C";
+    }
 }
 
 // Function: Create new Weapon
